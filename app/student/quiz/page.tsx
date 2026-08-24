@@ -31,7 +31,8 @@ function QuizContent() {
         body: JSON.stringify({ code, nickname, observationId: q.observation.id, isCorrect }),
       })
     } catch {
-      setError('문제가 발생했어요. 다시 시도해주세요')
+      // Silently ignore answer submission failures to avoid blocking the quiz.
+      // The student's score record for this question will be lost, but they can continue.
     }
   }
 

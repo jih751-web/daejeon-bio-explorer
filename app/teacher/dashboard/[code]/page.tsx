@@ -17,7 +17,10 @@ export default function DashboardPage() {
     const load = () =>
       fetch(`/api/dashboard?code=${code}`)
         .then((r) => r.json())
-        .then(setData)
+        .then((data) => {
+          setData(data)
+          setError(null)
+        })
         .catch(() => setError('문제가 발생했어요. 다시 시도해주세요'))
     load()
     const interval = setInterval(load, 10000)
