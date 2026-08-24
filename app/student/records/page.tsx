@@ -1,0 +1,48 @@
+'use client'
+import { Suspense, useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { Observation } from '@/lib/types'
+
+function RecordsContent() {
+  const params = useSearchParams()
+  const code = params.get('code')!
+  const nickname = params.get('nickname')!
+  const [observations, setObservations] = useState<Observation[]>([])
+
+  useEffect(() => {
+    fetch(`/api/observations?code=${code}&nickname=${nickname}`)
+      .then((r) => r.json())
+      .then((data) => setObservations(data.observations ?? []))
+  }, [code, nickname])
+
+  return (
+    <main className="p-8 max-w-md mx-auto">
+      <h1 className="text-xl font-bold mb-2">내 기록</h1>
+      <p className="text-slate-500 mb-6">오늘 {observations.length}종 발견!</p>
+      <div className="grid grid-cols-2 gap-3">
+        {observations.map((o) => (
+          <div key={o.id} className="border rounded-lg overflow-hidden">
+            <img src={o.photoUrl} alt={o.speciesName} className="w-full h-24 object-cover" />
+            <p className="text-sm p-2">{o.speciesName}</p>
+          </div>
+        ))}
+      </div>
+      {observations.length >= 3 && (
+        <a
+          href={`/student/quiz?code=${code}&nickname=${nickname}`}
+          className="block text-center bg-blue-600 text-white py-3 rounded-lg mt-6"
+        >
+          퀴즈 풀러 가기
+        </a>
+      )}
+    </main>
+  )
+}
+
+export default function RecordsPage() {
+  return (
+    <Suspense fallback={<main className="p-8 text-center">로딩 중...</main>}>
+      <RecordsContent />
+    </Suspense>
+  )
+}
