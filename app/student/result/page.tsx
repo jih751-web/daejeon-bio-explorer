@@ -36,8 +36,10 @@ function ResultContent() {
           method: 'POST',
           body: JSON.stringify({ scientificName: top.scientificName, koreanName: top.koreanName }),
         })
-        const describeData = await describeRes.json()
-        setDescription(describeData.text)
+        if (describeRes.ok) {
+          const describeData = await describeRes.json()
+          setDescription(describeData.text)
+        }
       }
     }
     run()
@@ -46,7 +48,7 @@ function ResultContent() {
   async function handleSave() {
     const top = candidates?.[0]
     if (!top) return
-    await fetch('/api/observations', {
+    const res = await fetch('/api/observations', {
       method: 'POST',
       body: JSON.stringify({
         code,
@@ -57,6 +59,10 @@ function ResultContent() {
         description,
       }),
     })
+    if (!res.ok) {
+      setError('저장에 실패했어요. 다시 시도해주세요')
+      return
+    }
     setSaved(true)
   }
 
