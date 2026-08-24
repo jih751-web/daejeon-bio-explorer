@@ -1,31 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSupabaseServerClient } from '@/lib/supabase'
+import { getFirestoreAdmin } from '@/lib/firebase'
 
 export async function GET(req: NextRequest) {
   const code = req.nextUrl.searchParams.get('code')
   if (!code) return NextResponse.json({ error: 'code required' }, { status: 400 })
 
-  const supabase = getSupabaseServerClient()
+  const db = getFirestoreAdmin()
 
-  const { data: observations, error: obsError } = await supabase
-    .from('observations')
-    .select('nickname, species_name')
-    .eq('code', code)
-
-  if (obsError) return NextResponse.json({ error: obsError.message }, { status: 500 })
-
-  const { data: quizResults, error: quizError } = await supabase
-    .from('quiz_results')
-    .select('is_correct')
-    .eq('code', code)
-
-  if (quizError) return NextResponse.json({ error: quizError.message }, { status: 500 })
+  const obsSnapshot = await db.collection('observations').where('code', '==', code).get()
+  const quizSnapshot = await db.collection('quizResults').where('code', '==', code).get()
 
   const studentMap = new Map<string, number>()
   const speciesMap = new Map<string, number>()
-  for (const o of observations ?? []) {
-    studentMap.set(o.nickname, (studentMap.get(o.nickname) ?? 0) + 1)
-    speciesMap.set(o.species_name, (speciesMap.get(o.species_name) ?? 0) + 1)
+  for (const doc of obsSnapshot.docs) {
+    const { nickname, speciesName } = doc.data()
+    studentMap.set(nickname, (studentMap.get(nickname) ?? 0) + 1)
+    speciesMap.set(speciesName, (speciesMap.get(speciesName) ?? 0) + 1)
   }
 
   const students = [...studentMap.entries()]
@@ -36,8 +26,8 @@ export async function GET(req: NextRequest) {
     .map(([speciesName, count]) => ({ speciesName, count }))
     .sort((a, b) => b.count - a.count)
 
-  const total = quizResults?.length ?? 0
-  const correct = quizResults?.filter((q) => q.is_correct).length ?? 0
+  const total = quizSnapshot.size
+  const correct = quizSnapshot.docs.filter((doc) => doc.data().isCorrect).length
   const quizAccuracy = total === 0 ? 0 : Math.round((correct / total) * 100)
 
   return NextResponse.json({ students, speciesRanking, quizAccuracy })

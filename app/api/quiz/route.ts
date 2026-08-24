@@ -1,17 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSupabaseServerClient } from '@/lib/supabase'
+import { getFirestoreAdmin } from '@/lib/firebase'
+import { FieldValue } from 'firebase-admin/firestore'
 
 export async function POST(req: NextRequest) {
   const { code, nickname, observationId, isCorrect } = await req.json()
-  const supabase = getSupabaseServerClient()
+  const db = getFirestoreAdmin()
 
-  const { error } = await supabase.from('quiz_results').insert({
+  await db.collection('quizResults').add({
     code,
     nickname,
-    observation_id: observationId,
-    is_correct: isCorrect,
+    observationId,
+    isCorrect,
+    answeredAt: FieldValue.serverTimestamp(),
   })
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json({ ok: true })
 }
