@@ -14,59 +14,83 @@ function ResultContent() {
   const [lowConfidence, setLowConfidence] = useState(false)
   const [description, setDescription] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [saveError, setSaveError] = useState<string | null>(null)
   const [saved, setSaved] = useState(false)
+  const [retryKey, setRetryKey] = useState(0)
 
   useEffect(() => {
     async function run() {
-      const identifyRes = await fetch('/api/identify', {
-        method: 'POST',
-        body: JSON.stringify({ photoUrl }),
-      })
-      if (!identifyRes.ok) {
-        setError('인식에 실패했어요. 잠시 후 다시 시도해주세요')
-        return
-      }
-      const identifyData = await identifyRes.json()
-      setCandidates(identifyData.candidates)
-      setLowConfidence(identifyData.lowConfidence)
-
-      const top = identifyData.candidates[0]
-      if (top) {
-        const describeRes = await fetch('/api/describe', {
+      setError(null)
+      try {
+        const identifyRes = await fetch('/api/identify', {
           method: 'POST',
-          body: JSON.stringify({ scientificName: top.scientificName, koreanName: top.koreanName }),
+          body: JSON.stringify({ photoUrl }),
         })
-        if (describeRes.ok) {
-          const describeData = await describeRes.json()
-          setDescription(describeData.text)
+        if (!identifyRes.ok) {
+          setError('인식에 실패했어요. 잠시 후 다시 시도해주세요')
+          return
         }
+        const identifyData = await identifyRes.json()
+        setCandidates(identifyData.candidates)
+        setLowConfidence(identifyData.lowConfidence)
+
+        const top = identifyData.candidates[0]
+        if (top) {
+          const describeRes = await fetch('/api/describe', {
+            method: 'POST',
+            body: JSON.stringify({ scientificName: top.scientificName, koreanName: top.koreanName }),
+          })
+          if (describeRes.ok) {
+            const describeData = await describeRes.json()
+            setDescription(describeData.text)
+          }
+        }
+      } catch {
+        setError('문제가 발생했어요. 다시 시도해주세요')
       }
     }
     run()
-  }, [photoUrl])
+  }, [photoUrl, retryKey])
 
   async function handleSave() {
     const top = candidates?.[0]
     if (!top) return
-    const res = await fetch('/api/observations', {
-      method: 'POST',
-      body: JSON.stringify({
-        code,
-        nickname,
-        photoUrl,
-        speciesName: top.koreanName ?? top.scientificName,
-        confidence: top.confidence,
-        description,
-      }),
-    })
-    if (!res.ok) {
-      setError('저장에 실패했어요. 다시 시도해주세요')
-      return
+    setSaveError(null)
+    try {
+      const res = await fetch('/api/observations', {
+        method: 'POST',
+        body: JSON.stringify({
+          code,
+          nickname,
+          photoUrl,
+          speciesName: top.koreanName ?? top.scientificName,
+          confidence: top.confidence,
+          description,
+        }),
+      })
+      if (!res.ok) {
+        setSaveError('저장에 실패했어요. 다시 시도해주세요')
+        return
+      }
+      setSaved(true)
+    } catch {
+      setSaveError('저장에 실패했어요. 다시 시도해주세요')
     }
-    setSaved(true)
   }
 
-  if (error) return <main className="p-8 text-center text-red-600">{error}</main>
+  if (error) {
+    return (
+      <main className="p-8 text-center text-red-600">
+        <p className="mb-4">{error}</p>
+        <button
+          onClick={() => setRetryKey((k) => k + 1)}
+          className="border py-2 px-6 rounded-lg text-slate-700"
+        >
+          다시 시도
+        </button>
+      </main>
+    )
+  }
   if (!candidates) return <main className="p-8 text-center">분석 중이에요...</main>
 
   return (
@@ -100,11 +124,18 @@ function ResultContent() {
           {saved ? '저장됨' : '내 기록에 저장'}
         </button>
       )}
+      {saveError && <p className="text-red-600 text-sm text-center mb-3">{saveError}</p>}
       <button
         onClick={() => router.push(`/student/capture?code=${code}&nickname=${nickname}`)}
-        className="w-full border py-3 rounded-lg"
+        className="w-full border py-3 rounded-lg mb-3"
       >
         다른 생물 찍기
+      </button>
+      <button
+        onClick={() => router.push(`/student/records?code=${code}&nickname=${nickname}`)}
+        className="w-full border py-3 rounded-lg"
+      >
+        내 기록 보기
       </button>
     </main>
   )
