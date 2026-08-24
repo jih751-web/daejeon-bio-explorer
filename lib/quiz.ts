@@ -7,8 +7,8 @@ export interface QuizQuestion {
 }
 
 export function buildQuizQuestions(observations: Observation[]): QuizQuestion[] {
-  const allNames = observations.map((o) => o.speciesName)
-  const maxChoices = Math.min(4, observations.length)
+  const allNames = [...new Set(observations.map((o) => o.speciesName))]
+  const maxChoices = Math.min(4, allNames.length)
 
   return observations.map((observation) => {
     const wrongPool = allNames.filter((n) => n !== observation.speciesName)

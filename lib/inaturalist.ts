@@ -11,6 +11,8 @@ export async function identifySpecies(photoUrl: string): Promise<SpeciesCandidat
 
   const form = new FormData()
   form.append('image', new Blob([photoBlob]), 'photo.jpg')
+  // TODO(Task 11): 실제 iNaturalist 자격증명으로 locale=ko 응답 형식을 라이브 검증할 것.
+  form.append('locale', 'ko')
 
   const res = await fetch('https://api.inaturalist.org/v1/computervision/score_image', {
     method: 'POST',

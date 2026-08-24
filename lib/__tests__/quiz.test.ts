@@ -24,4 +24,22 @@ describe('buildQuizQuestions', () => {
     expect(questions).toHaveLength(2)
     questions.forEach((q) => expect(q.choices).toHaveLength(2))
   })
+
+  it('does not produce duplicate choices when the same species is saved more than once', () => {
+    const observations = [
+      makeObs('1', '사자'),
+      makeObs('2', '사자'),
+      makeObs('3', '호랑이'),
+      makeObs('4', '호랑이'),
+    ]
+    const questions = buildQuizQuestions(observations)
+
+    expect(questions).toHaveLength(4)
+    questions.forEach((q) => {
+      const uniqueChoices = new Set(q.choices)
+      expect(uniqueChoices.size).toBe(q.choices.length)
+      // only 2 distinct species exist among the observations
+      expect(q.choices).toHaveLength(2)
+    })
+  })
 })
