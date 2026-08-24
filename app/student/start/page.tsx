@@ -18,14 +18,18 @@ export default function StudentStartPage() {
       setError('닉네임을 입력해주세요')
       return
     }
-    const res = await fetch(`/api/sessions?code=${code}`)
-    const data = await res.json()
-    if (!data.exists) {
-      setError('존재하지 않는 활동 코드예요. 선생님께 다시 확인해주세요')
-      return
+    try {
+      const res = await fetch(`/api/sessions?code=${code}`)
+      const data = await res.json()
+      if (!data.exists) {
+        setError('존재하지 않는 활동 코드예요. 선생님께 다시 확인해주세요')
+        return
+      }
+      const params = new URLSearchParams({ code, nickname })
+      router.push(`/student/capture?${params.toString()}`)
+    } catch {
+      setError('문제가 발생했어요. 다시 시도해주세요')
     }
-    const params = new URLSearchParams({ code, nickname })
-    router.push(`/student/capture?${params.toString()}`)
   }
 
   return (

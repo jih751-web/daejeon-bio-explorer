@@ -8,17 +8,22 @@ function RecordsContent() {
   const code = params.get('code')!
   const nickname = params.get('nickname')!
   const [observations, setObservations] = useState<Observation[]>([])
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     fetch(`/api/observations?code=${code}&nickname=${nickname}`)
       .then((r) => r.json())
       .then((data) => setObservations(data.observations ?? []))
+      .catch(() => setError('문제가 발생했어요. 다시 시도해주세요'))
   }, [code, nickname])
+
+  if (error) return <main className="p-8 text-center text-red-600">{error}</main>
 
   return (
     <main className="p-8 max-w-md mx-auto">
       <h1 className="text-xl font-bold mb-2">내 기록</h1>
-      <p className="text-slate-500 mb-6">오늘 {observations.length}종 발견!</p>
+      <p className="text-slate-500 mb-2">오늘 {observations.length}종 발견!</p>
+      <p className="text-xs text-slate-500 mb-6">AI 참고용 추정 결과이며 정확하지 않을 수 있습니다</p>
       <div className="grid grid-cols-2 gap-3">
         {observations.map((o) => (
           <div key={o.id} className="border rounded-lg overflow-hidden">

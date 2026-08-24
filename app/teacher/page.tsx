@@ -4,13 +4,20 @@ import { useState } from 'react'
 export default function TeacherPage() {
   const [code, setCode] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   async function issueCode() {
     setLoading(true)
-    const res = await fetch('/api/sessions', { method: 'POST', body: JSON.stringify({}) })
-    const data = await res.json()
-    setCode(data.code)
-    setLoading(false)
+    setError(null)
+    try {
+      const res = await fetch('/api/sessions', { method: 'POST', body: JSON.stringify({}) })
+      const data = await res.json()
+      setCode(data.code)
+    } catch {
+      setError('문제가 발생했어요. 다시 시도해주세요')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -23,6 +30,7 @@ export default function TeacherPage() {
       >
         {loading ? '발급 중...' : '코드 발급'}
       </button>
+      {error && <p className="text-red-600 text-sm mt-4">{error}</p>}
       {code && (
         <div className="mt-8">
           <p className="text-sm text-slate-500">학생들에게 이 코드를 알려주세요</p>

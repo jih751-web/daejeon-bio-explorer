@@ -11,11 +11,13 @@ function QuizContent() {
   const [questions, setQuestions] = useState<QuizQuestion[]>([])
   const [index, setIndex] = useState(0)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     fetch(`/api/observations?code=${code}&nickname=${nickname}`)
       .then((r) => r.json())
       .then((data) => setQuestions(buildQuizQuestions(data.observations ?? [])))
+      .catch(() => setError('문제가 발생했어요. 다시 시도해주세요'))
   }, [code, nickname])
 
   async function handleAnswer(choiceIndex: number) {
@@ -23,10 +25,14 @@ function QuizContent() {
     const isCorrect = choiceIndex === q.correctIndex
     setFeedback(isCorrect ? 'correct' : 'wrong')
 
-    await fetch('/api/quiz', {
-      method: 'POST',
-      body: JSON.stringify({ code, nickname, observationId: q.observation.id, isCorrect }),
-    })
+    try {
+      await fetch('/api/quiz', {
+        method: 'POST',
+        body: JSON.stringify({ code, nickname, observationId: q.observation.id, isCorrect }),
+      })
+    } catch {
+      setError('문제가 발생했어요. 다시 시도해주세요')
+    }
   }
 
   function handleNext() {
@@ -34,6 +40,7 @@ function QuizContent() {
     setIndex((i) => i + 1)
   }
 
+  if (error) return <main className="p-8 text-center text-red-600">{error}</main>
   if (questions.length === 0) return <main className="p-8 text-center">기록을 3개 이상 저장하면 퀴즈를 풀 수 있어요</main>
   if (index >= questions.length) return <main className="p-8 text-center text-xl font-bold">퀴즈 완료!</main>
 

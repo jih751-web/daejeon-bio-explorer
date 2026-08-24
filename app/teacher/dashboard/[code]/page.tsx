@@ -11,14 +11,20 @@ interface DashboardData {
 export default function DashboardPage() {
   const { code } = useParams<{ code: string }>()
   const [data, setData] = useState<DashboardData | null>(null)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const load = () => fetch(`/api/dashboard?code=${code}`).then((r) => r.json()).then(setData)
+    const load = () =>
+      fetch(`/api/dashboard?code=${code}`)
+        .then((r) => r.json())
+        .then(setData)
+        .catch(() => setError('문제가 발생했어요. 다시 시도해주세요'))
     load()
     const interval = setInterval(load, 10000)
     return () => clearInterval(interval)
   }, [code])
 
+  if (error) return <main className="p-8 text-center text-red-600">{error}</main>
   if (!data) return <main className="p-8 text-center">불러오는 중...</main>
 
   return (
@@ -40,6 +46,7 @@ export default function DashboardPage() {
 
       <section>
         <h2 className="font-bold mb-2">많이 발견된 생물 순위</h2>
+        <p className="text-xs text-slate-500 mb-2">AI 참고용 추정 결과이며 정확하지 않을 수 있습니다</p>
         <ul className="space-y-1">
           {data.speciesRanking.map((s) => (
             <li key={s.speciesName} className="flex justify-between border-b py-1">
