@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getFirestoreAdmin } from '@/lib/firebase'
+import { getFirestoreAdmin } from '@/lib/firebase-admin'
 
 export async function GET(req: NextRequest) {
   const code = req.nextUrl.searchParams.get('code')

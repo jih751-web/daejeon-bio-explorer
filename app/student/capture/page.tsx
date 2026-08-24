@@ -2,7 +2,8 @@
 import { Suspense } from 'react'
 import { useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { getSupabaseBrowserClient } from '@/lib/supabase'
+import { getFirebaseStorage } from '@/lib/firebase'
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
 function CaptureContent() {
   const router = useRouter()
@@ -18,21 +19,19 @@ function CaptureContent() {
     setUploading(true)
     setError(null)
 
-    const supabase = getSupabaseBrowserClient()
-    const path = `${code}/${Date.now()}-${nickname}.jpg`
-    const { error: uploadError } = await supabase.storage
-      .from('observation-photos')
-      .upload(path, file, { contentType: file.type })
+    try {
+      const storage = getFirebaseStorage()
+      const path = `observation-photos/${code}/${Date.now()}-${nickname}.jpg`
+      const storageRef = ref(storage, path)
+      await uploadBytes(storageRef, file, { contentType: file.type })
+      const photoUrl = await getDownloadURL(storageRef)
 
-    if (uploadError) {
+      const resultParams = new URLSearchParams({ code, nickname, photoUrl })
+      router.push(`/student/result?${resultParams.toString()}`)
+    } catch {
       setError('사진 업로드에 실패했어요. 다시 시도해주세요')
       setUploading(false)
-      return
     }
-
-    const { data: urlData } = supabase.storage.from('observation-photos').getPublicUrl(path)
-    const resultParams = new URLSearchParams({ code, nickname, photoUrl: urlData.publicUrl })
-    router.push(`/student/result?${resultParams.toString()}`)
   }
 
   return (

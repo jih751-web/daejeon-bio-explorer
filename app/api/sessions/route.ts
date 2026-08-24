@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getFirestoreAdmin } from '@/lib/firebase'
+import { getFirestoreAdmin } from '@/lib/firebase-admin'
 import { generateSessionCode } from '@/lib/sessionCode'
 import { FieldValue } from 'firebase-admin/firestore'
 
