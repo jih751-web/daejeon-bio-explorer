@@ -52,7 +52,7 @@ function QuizContent() {
       <p className="text-sm text-slate-500 mb-2">{index + 1} / {questions.length}</p>
       <p className="font-bold mb-4">
         {q.observation.description ? (
-          <>이 특징을 가진 생물은?<br /><span className="font-normal text-slate-600">{q.observation.description}</span></>
+          <>이 특징을 가진 생물은?<br /><span className="font-normal text-slate-600">{q.observation.description.replaceAll(q.observation.speciesName, '○○○')}</span></>
         ) : (
           '이 생물은 무엇일까요?'
         )}
