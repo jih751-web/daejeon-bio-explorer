@@ -49,7 +49,6 @@ export default function DashboardPage() {
 
       <section>
         <h2 className="font-bold mb-2">많이 발견된 생물 순위</h2>
-        <p className="text-xs text-slate-500 mb-2">AI 참고용 추정 결과이며 정확하지 않을 수 있습니다</p>
         <ul className="space-y-1">
           {data.speciesRanking.map((s) => (
             <li key={s.speciesName} className="flex justify-between border-b py-1">
