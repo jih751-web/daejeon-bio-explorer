@@ -26,7 +26,7 @@ export default function StudentStartPage() {
         return
       }
       const params = new URLSearchParams({ code, nickname })
-      router.push(`/student/capture?${params.toString()}`)
+      router.push(`/student/scan?${params.toString()}`)
     } catch {
       setError('문제가 발생했어요. 다시 시도해주세요')
     }
@@ -59,6 +59,9 @@ export default function StudentStartPage() {
       <button onClick={handleStart} className="w-full bg-blue-600 text-white py-3 rounded-lg">
         시작하기
       </button>
+      <a href="/student/search?code=&nickname=" className="block text-center text-blue-600 underline mt-4">
+        이름으로 찾기
+      </a>
     </main>
   )
 }
