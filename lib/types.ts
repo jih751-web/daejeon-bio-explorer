@@ -13,9 +13,8 @@ export interface Observation {
   id: string
   code: string
   nickname: string
-  photoUrl: string
+  speciesId: string
   speciesName: string
-  confidence: number
   description: string | null
   createdAt: string
 }
