@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { SPECIES, findSpeciesById, searchSpeciesByName } from '../species'
+import { CLASS_DESCRIPTIONS } from '../classDescriptions'
 
 describe('species data integrity', () => {
   it('has unique ids', () => {
@@ -30,6 +31,12 @@ describe('species data integrity', () => {
   it('no feature description reveals its own species name (quiz answer leakage)', () => {
     const leaks = SPECIES.filter((s) => s.features.includes(s.koreanName))
     expect(leaks.map((s) => s.id)).toEqual([])
+  })
+
+  it('every taxonomy.class value used by a species has a matching CLASS_DESCRIPTIONS entry', () => {
+    const usedClasses = new Set(SPECIES.map((s) => s.taxonomy.class))
+    const missing = [...usedClasses].filter((c) => !CLASS_DESCRIPTIONS[c])
+    expect(missing).toEqual([])
   })
 })
 

@@ -2,14 +2,16 @@
 import { Suspense, useState } from 'react'
 import { useParams, useSearchParams } from 'next/navigation'
 import { findSpeciesById } from '@/data/species'
+import { CLASS_DESCRIPTIONS } from '@/data/classDescriptions'
 
-type ChipKey = 'taxonomy' | 'features' | 'food' | 'habitat'
+type ChipKey = 'taxonomy' | 'features' | 'food' | 'habitat' | 'whyClass'
 
 const CHIPS: { key: ChipKey; label: string }[] = [
   { key: 'taxonomy', label: '분류는?' },
   { key: 'features', label: '특징이 뭐예요?' },
   { key: 'food', label: '무엇을 먹나요?' },
   { key: 'habitat', label: '어디 살아요?' },
+  { key: 'whyClass', label: '왜 이 무리(강)에 속해요?' },
 ]
 
 function SpeciesDetailContent() {
@@ -35,6 +37,13 @@ function SpeciesDetailContent() {
     if (key === 'taxonomy') {
       const t = species!.taxonomy
       return `${t.domain} > ${t.kingdom} > ${t.phylum} > ${t.class} > ${t.order} > ${t.family} > ${t.genus} > ${t.species}`
+    }
+    if (key === 'whyClass') {
+      const className = species!.taxonomy.class
+      const explanation = CLASS_DESCRIPTIONS[className]
+      return explanation
+        ? `${species!.koreanName}은(는) ${className}에 속해요. ${explanation}`
+        : `${species!.koreanName}은(는) ${className}에 속해요.`
     }
     return species![key]
   }
