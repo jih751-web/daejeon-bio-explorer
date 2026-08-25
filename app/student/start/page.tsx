@@ -8,7 +8,7 @@ export default function StudentStartPage() {
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
 
-  async function validateAndGo(destination: 'scan' | 'quiz') {
+  async function validateAndGo() {
     setError(null)
     if (!/^\d{4}$/.test(code)) {
       setError('활동 코드 4자리를 입력해주세요')
@@ -26,7 +26,7 @@ export default function StudentStartPage() {
         return
       }
       const params = new URLSearchParams({ code, nickname })
-      router.push(`/student/${destination}?${params.toString()}`)
+      router.push(`/student/scan?${params.toString()}`)
     } catch {
       setError('문제가 발생했어요. 다시 시도해주세요')
     }
@@ -56,11 +56,8 @@ export default function StudentStartPage() {
         />
       </label>
       {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
-      <button onClick={() => validateAndGo('scan')} className="w-full bg-blue-600 text-white py-3 rounded-lg">
+      <button onClick={() => validateAndGo()} className="w-full bg-blue-600 text-white py-3 rounded-lg">
         시작하기
-      </button>
-      <button onClick={() => validateAndGo('quiz')} className="w-full border py-3 rounded-lg mt-3">
-        퀴즈만 바로 풀기
       </button>
     </main>
   )

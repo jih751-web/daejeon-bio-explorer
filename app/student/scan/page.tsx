@@ -80,6 +80,9 @@ function ScanContent() {
       <a href={`/student/search?code=${code}&nickname=${nickname}`} className="block text-blue-600 underline mt-4">
         대신 이름으로 찾기
       </a>
+      <a href={`/student/quiz?code=${code}&nickname=${nickname}`} className="block text-blue-600 underline mt-2">
+        퀴즈 풀기
+      </a>
     </main>
   )
 }
