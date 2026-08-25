@@ -30,7 +30,7 @@ function RecordsContent() {
           </li>
         ))}
       </ul>
-      {observations.length >= 3 && (
+      {observations.length > 0 && (
         <a
           href={`/student/quiz?code=${code}&nickname=${nickname}`}
           className="block text-center bg-blue-600 text-white py-3 rounded-lg mt-6"

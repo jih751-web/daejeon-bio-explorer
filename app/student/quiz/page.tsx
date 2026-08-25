@@ -42,7 +42,7 @@ function QuizContent() {
   }
 
   if (error) return <main className="p-8 text-center text-red-600">{error}</main>
-  if (questions.length === 0) return <main className="p-8 text-center">기록을 3개 이상 저장하면 퀴즈를 풀 수 있어요</main>
+  if (questions.length === 0) return <main className="p-8 text-center">아직 저장한 기록이 없어요. 생물을 찾아서 먼저 저장해보세요</main>
   if (index >= questions.length) return <main className="p-8 text-center text-xl font-bold">퀴즈 완료!</main>
 
   const q = questions[index]
