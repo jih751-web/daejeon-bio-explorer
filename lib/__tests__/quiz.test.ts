@@ -3,7 +3,7 @@ import { buildQuizQuestions } from '../quiz'
 import { Observation } from '../types'
 
 function makeObs(id: string, speciesName: string): Observation {
-  return { id, code: '1234', nickname: '테스터', photoUrl: 'x', speciesName, confidence: 0.9, description: null, createdAt: '2026-08-24' }
+  return { id, code: '1234', nickname: '테스터', speciesId: `species-${id}`, speciesName, description: null, createdAt: '2026-08-24' }
 }
 
 describe('buildQuizQuestions', () => {

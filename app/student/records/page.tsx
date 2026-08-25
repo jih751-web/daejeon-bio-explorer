@@ -24,14 +24,13 @@ function RecordsContent() {
       <h1 className="text-xl font-bold mb-2">내 기록</h1>
       <p className="text-slate-500 mb-2">오늘 {observations.length}종 발견!</p>
       <p className="text-xs text-slate-500 mb-6">AI 참고용 추정 결과이며 정확하지 않을 수 있습니다</p>
-      <div className="grid grid-cols-2 gap-3">
+      <ul className="space-y-2">
         {observations.map((o) => (
-          <div key={o.id} className="border rounded-lg overflow-hidden">
-            <img src={o.photoUrl} alt={o.speciesName} className="w-full h-24 object-cover" />
-            <p className="text-sm p-2">{o.speciesName}</p>
-          </div>
+          <li key={o.id} className="border rounded-lg px-4 py-3">
+            <p className="font-medium">{o.speciesName}</p>
+          </li>
         ))}
-      </div>
+      </ul>
       {observations.length >= 3 && (
         <a
           href={`/student/quiz?code=${code}&nickname=${nickname}`}

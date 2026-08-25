@@ -50,8 +50,13 @@ function QuizContent() {
   return (
     <main className="p-8 max-w-md mx-auto text-center">
       <p className="text-sm text-slate-500 mb-2">{index + 1} / {questions.length}</p>
-      <img src={q.observation.photoUrl} alt="퀴즈 사진" className="w-full rounded-lg mb-6" />
-      <p className="font-bold mb-4">이 생물은 무엇일까요?</p>
+      <p className="font-bold mb-4">
+        {q.observation.description ? (
+          <>이 특징을 가진 생물은?<br /><span className="font-normal text-slate-600">{q.observation.description}</span></>
+        ) : (
+          '이 생물은 무엇일까요?'
+        )}
+      </p>
       <div className="space-y-2">
         {q.choices.map((choice, i) => (
           <button
