@@ -31,6 +31,9 @@ export default function TeacherPage() {
         {loading ? '발급 중...' : '코드 발급'}
       </button>
       {error && <p className="text-red-600 text-sm mt-4">{error}</p>}
+      <a href="/teacher/qrcodes" className="text-blue-600 underline block mt-6">
+        QR코드 인쇄하기
+      </a>
       {code && (
         <div className="mt-8">
           <p className="text-sm text-slate-500">학생들에게 이 코드를 알려주세요</p>
