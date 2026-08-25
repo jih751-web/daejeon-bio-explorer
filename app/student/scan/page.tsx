@@ -17,17 +17,23 @@ function ScanContent() {
   useEffect(() => {
     let stream: MediaStream | null = null
     let rafId: number
+    let cancelled = false
 
     async function start() {
       try {
-        stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+        const acquiredStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+        if (cancelled) {
+          acquiredStream.getTracks().forEach((t) => t.stop())
+          return
+        }
+        stream = acquiredStream
         if (videoRef.current) {
           videoRef.current.srcObject = stream
           await videoRef.current.play()
         }
         tick()
       } catch {
-        setError('카메라를 사용할 수 없어요. 권한을 확인해주세요.')
+        if (!cancelled) setError('카메라를 사용할 수 없어요. 권한을 확인해주세요.')
       }
     }
 
@@ -58,6 +64,7 @@ function ScanContent() {
 
     start()
     return () => {
+      cancelled = true
       cancelAnimationFrame(rafId)
       stream?.getTracks().forEach((t) => t.stop())
     }
