@@ -91,8 +91,11 @@ function SpeciesDetailContent() {
       >
         {saved ? '저장됨' : '내 기록에 저장'}
       </button>
-      <a href={`/student/scan?code=${code}&nickname=${nickname}`} className="block text-center border py-3 rounded-lg">
+      <a href={`/student/scan?code=${code}&nickname=${nickname}`} className="block text-center border py-3 rounded-lg mb-3">
         다른 생물 찾기
+      </a>
+      <a href={`/student/records?code=${code}&nickname=${nickname}`} className="block text-center border py-3 rounded-lg">
+        내 기록 보기
       </a>
     </main>
   )

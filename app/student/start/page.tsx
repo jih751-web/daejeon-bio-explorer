@@ -59,9 +59,6 @@ export default function StudentStartPage() {
       <button onClick={handleStart} className="w-full bg-blue-600 text-white py-3 rounded-lg">
         시작하기
       </button>
-      <a href="/student/search?code=&nickname=" className="block text-center text-blue-600 underline mt-4">
-        이름으로 찾기
-      </a>
     </main>
   )
 }
