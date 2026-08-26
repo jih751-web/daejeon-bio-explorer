@@ -1,8 +1,15 @@
 'use client'
+import { useEffect, useState } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
 import { SPECIES } from '@/data/species'
 
 export default function QrCodesPage() {
+  const [origin, setOrigin] = useState('')
+
+  useEffect(() => {
+    setOrigin(window.location.origin)
+  }, [])
+
   return (
     <main className="p-8 max-w-4xl mx-auto">
       <div className="print:hidden mb-6">
@@ -24,7 +31,7 @@ export default function QrCodesPage() {
             key={s.id}
             className="border rounded-lg p-4 text-center flex flex-col items-center print:break-inside-avoid"
           >
-            <QRCodeSVG value={s.id} size={140} />
+            <QRCodeSVG value={origin ? `${origin}/student/species/${s.id}` : s.id} size={140} />
             <p className="font-bold mt-3">{s.koreanName}</p>
             <p className="text-xs text-slate-500">{s.scientificName}</p>
           </div>

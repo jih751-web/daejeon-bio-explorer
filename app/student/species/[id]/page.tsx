@@ -1,6 +1,6 @@
 'use client'
-import { Suspense, useState } from 'react'
-import { useParams, useSearchParams } from 'next/navigation'
+import { Suspense, useEffect, useState } from 'react'
+import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { findSpeciesById } from '@/data/species'
 import { CLASS_DESCRIPTIONS } from '@/data/classDescriptions'
 
@@ -17,16 +17,27 @@ const CHIPS: { key: ChipKey; label: string }[] = [
 function SpeciesDetailContent() {
   const routeParams = useParams<{ id: string }>()
   const searchParams = useSearchParams()
-  const code = searchParams.get('code')!
-  const nickname = searchParams.get('nickname')!
+  const router = useRouter()
+  const code = searchParams.get('code')
+  const nickname = searchParams.get('nickname')
   const species = findSpeciesById(routeParams.id)
 
   const [answers, setAnswers] = useState<ChipKey[]>([])
   const [saved, setSaved] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
 
+  useEffect(() => {
+    if (!code || !nickname) {
+      router.replace(`/student/start?next=${encodeURIComponent(`/student/species/${routeParams.id}`)}`)
+    }
+  }, [code, nickname, router, routeParams.id])
+
   if (!species) {
     return <main className="p-4 text-center">생물 정보를 찾을 수 없어요.</main>
+  }
+
+  if (!code || !nickname) {
+    return <main className="p-4 text-center">활동 코드를 확인하는 중이에요...</main>
   }
 
   function ask(key: ChipKey) {

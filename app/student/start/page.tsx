@@ -1,12 +1,14 @@
 'use client'
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { Suspense, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 
-export default function StudentStartPage() {
+function StudentStartContent() {
   const [code, setCode] = useState('')
   const [nickname, setNickname] = useState('')
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const next = searchParams.get('next')
 
   async function validateAndGo() {
     setError(null)
@@ -26,7 +28,7 @@ export default function StudentStartPage() {
         return
       }
       const params = new URLSearchParams({ code, nickname })
-      router.push(`/student/scan?${params.toString()}`)
+      router.push(`${next || '/student/scan'}?${params.toString()}`)
     } catch {
       setError('문제가 발생했어요. 다시 시도해주세요')
     }
@@ -60,5 +62,13 @@ export default function StudentStartPage() {
         시작하기
       </button>
     </main>
+  )
+}
+
+export default function StudentStartPage() {
+  return (
+    <Suspense fallback={<main className="p-8 text-center">불러오는 중...</main>}>
+      <StudentStartContent />
+    </Suspense>
   )
 }

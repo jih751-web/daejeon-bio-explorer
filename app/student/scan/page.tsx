@@ -4,6 +4,12 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import jsQR from 'jsqr'
 import { findSpeciesById } from '@/data/species'
 
+function extractSpeciesId(raw: string): string {
+  const trimmed = raw.trim()
+  const match = trimmed.match(/\/student\/species\/([^/?#]+)/)
+  return match ? decodeURIComponent(match[1]) : trimmed
+}
+
 function ScanContent() {
   const router = useRouter()
   const params = useSearchParams()
@@ -49,7 +55,7 @@ function ScanContent() {
           const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
           const result = jsQR(imageData.data, imageData.width, imageData.height)
           if (result) {
-            const species = findSpeciesById(result.data.trim())
+            const species = findSpeciesById(extractSpeciesId(result.data))
             if (species) {
               router.push(`/student/species/${species.id}?code=${code}&nickname=${nickname}`)
               return
