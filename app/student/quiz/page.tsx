@@ -1,11 +1,13 @@
 'use client'
 import { Suspense, useEffect, useState } from 'react'
+import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 import { buildQuizQuestions, QuizQuestion } from '@/lib/quiz'
 import { QuizResult } from '@/lib/types'
 import { computeBadges, Badge } from '@/lib/badges'
 import { BadgeList } from '@/components/BadgeList'
 import { queueOrSend } from '@/lib/offlineQueue'
+import { getSpeciesPhoto } from '@/lib/speciesPhoto'
 
 function QuizContent() {
   const params = useSearchParams()
@@ -90,6 +92,8 @@ function QuizContent() {
   const q = questions[index]
   const letters = ['A', 'B', 'C', 'D']
   const letterColors = ['var(--color-forest-deep)', 'var(--color-sky)', 'var(--color-coral)', 'var(--color-violet)']
+  // 종 맞히기 문제는 정답(생물 이름)이 드러나므로 사진을 보여주지 않는다 — 강 맞히기 문제만 사진을 보여준다.
+  const photo = q.type === 'class' ? getSpeciesPhoto(q.observation.speciesId) : null
 
   return (
     <main className="min-h-screen max-w-md mx-auto flex flex-col">
@@ -114,7 +118,9 @@ function QuizContent() {
       <div className="px-7 pt-6 pb-2 text-center shrink-0">
         <p className="text-[13px] font-extrabold text-[color:var(--color-forest-deep)]">{index + 1}번째 문제</p>
         <p className="font-display text-xl mt-2 leading-snug">
-          {q.observation.description ? (
+          {q.type === 'class' ? (
+            '이 동물은 어느 무리(강)에 속할까요?'
+          ) : q.observation.description ? (
             <>
               이 특징을 가진 생물은?
               <br />
@@ -129,12 +135,18 @@ function QuizContent() {
       </div>
 
       <div className="mx-7 mt-3.5 bg-white rounded-3xl p-5 flex flex-col items-center gap-2 shadow-[0_10px_22px_-12px_oklch(0.35_0.08_150_/_0.35)] shrink-0">
-        <div className="w-[84px] h-[84px] rounded-[26px] bg-sky-soft flex items-center justify-center">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
-            <path d="M4 13c3-6 13-6 16 0-3 2-13 2-16 0Z" stroke="var(--color-sky)" strokeWidth="1.6" />
-          </svg>
+        <div className="relative w-[84px] h-[84px] rounded-[26px] bg-sky-soft flex items-center justify-center overflow-hidden">
+          {photo ? (
+            <Image src={photo.url} alt="" fill sizes="84px" className="object-cover" />
+          ) : (
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
+              <path d="M4 13c3-6 13-6 16 0-3 2-13 2-16 0Z" stroke="var(--color-sky)" strokeWidth="1.6" />
+            </svg>
+          )}
         </div>
-        <p className="font-extrabold text-[15px]">{q.observation.speciesName.replaceAll(/./g, '?')}</p>
+        <p className="font-extrabold text-[15px]">
+          {q.type === 'class' ? q.observation.speciesName : q.observation.speciesName.replaceAll(/./g, '?')}
+        </p>
       </div>
 
       <div className="px-7 pt-5 pb-7 flex flex-col gap-3 flex-1">

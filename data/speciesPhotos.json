@@ -1,0 +1,1848 @@
+{
+  "hwangbok": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "zhao",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Takifugu_obscurus",
+    "ext": "jpg"
+  },
+  "nongeo": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Izuzuki",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Lateolabrax_japonicus",
+    "ext": "jpg"
+  },
+  "baduksol-bujeon-nabi": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Notafly",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Taraka_hamada",
+    "ext": "jpg"
+  },
+  "gajung-namu-gochi-nabang": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "artist": "No machine-readable author provided. Kugamazog~commonswiki assumed (based on copyright claims).",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Samia_cynthia",
+    "ext": "jpg"
+  },
+  "malchong-beol": {
+    "found": false
+  },
+  "wangbadari": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Yasunori Koide",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Polistes_rothneyi",
+    "ext": "jpg"
+  },
+  "bukgeukgom": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Alan Wilson",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ursus_maritimus",
+    "ext": "jpg"
+  },
+  "pureun-badageobuk": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Charles J. Sharp",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Chelonia_mydas",
+    "ext": "jpg"
+  },
+  "saja": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Giles Laurent",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Panthera_leo",
+    "ext": "jpg"
+  },
+  "olppaemi": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Mousam ray",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Strix_nivicolum",
+    "ext": "jpg"
+  },
+  "gorani": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "Altaileopard",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Hydropotes_inermis",
+    "ext": "jpg"
+  },
+  "meotdwaeji": {
+    "found": true,
+    "license": "CC BY-SA 3.0 at",
+    "artist": "Valentin Panzirsch",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Sus_scrofa",
+    "ext": "jpg"
+  },
+  "neoguri": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Ryzhkov Sergey",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Nyctereutes_procyonoides",
+    "ext": "jpg"
+  },
+  "osori": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "Daderot",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Meles_leucurus",
+    "ext": "jpg"
+  },
+  "sudal": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Bernard Landgraf",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Lutra_lutra",
+    "ext": "jpg"
+  },
+  "dambi": {
+    "found": true,
+    "license": "CC BY 3.0",
+    "artist": "Rushenb",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Martes_flavigula",
+    "ext": "jpg"
+  },
+  "sanyang": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Robert Lawton at English Wikipedia",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Naemorhedus_caudatus",
+    "ext": "jpg"
+  },
+  "noru": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Andrey Giljov",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Capreolus_pygargus",
+    "ext": "jpg"
+  },
+  "bandalgaseumgom": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Guérin Nicolas (messages)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ursus_thibetanus",
+    "ext": "jpg"
+  },
+  "yeou": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "ClaudiaTen",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Vulpes_vulpes",
+    "ext": "jpg"
+  },
+  "africa-elephant": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Giles Laurent",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Loxodonta_africana",
+    "ext": "jpg"
+  },
+  "giraffe": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Thomas Fuhrmann",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Giraffa_camelopardalis",
+    "ext": "jpg"
+  },
+  "plains-zebra": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Yathin S Krishnappa",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Equus_quagga",
+    "ext": "jpg"
+  },
+  "giant-panda": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "J. Patrick Fischer",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ailuropoda_melanoleuca",
+    "ext": "jpg"
+  },
+  "white-rhino": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Giles Laurent",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ceratotherium_simum",
+    "ext": "jpg"
+  },
+  "chimpanzee": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Giles Laurent",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pan_troglodytes",
+    "ext": "jpg"
+  },
+  "red-kangaroo": {
+    "found": true,
+    "license": "GFDL 1.2",
+    "artist": "fir0002  flagstaffotos [at] gmail.com\n\t\tCanon 20D + Canon 70-200mm f/2.8 L",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Osphranter_rufus",
+    "ext": "jpg"
+  },
+  "hippopotamus": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Muhammad Mahdi Karim",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Hippopotamus_amphibius",
+    "ext": "jpg"
+  },
+  "siberian-tiger": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Appaloosa",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Panthera_tigris_altaica",
+    "ext": "jpg"
+  },
+  "gray-wolf": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "User:Mas3cf",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Canis_lupus",
+    "ext": "jpg"
+  },
+  "durumi": {
+    "found": true,
+    "license": "CC BY-SA 2.0",
+    "artist": "Alastair Rae from London, United Kingdom",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Grus_japonensis",
+    "ext": "jpg"
+  },
+  "jeoeosae": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Cp9asngf",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Platalea_minor",
+    "ext": "jpg"
+  },
+  "wonang": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Francis C. Franklin",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Aix_galericulata",
+    "ext": "jpg"
+  },
+  "keunosaekddakttakguri": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Alastair Rae",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Dendrocopos_leucotos",
+    "ext": "jpg"
+  },
+  "kkwong": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "ПавелПетрушин",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Phasianus_colchicus_karpowi",
+    "ext": "jpg"
+  },
+  "mae": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Mykola Swarnyk",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Falco_peregrinus",
+    "ext": "jpg"
+  },
+  "hwangjoroongi": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "artist": "Andreas Trepte",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Falco_tinnunculus",
+    "ext": "jpg"
+  },
+  "ppeokkugi": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Andy  Morffew from Itchen Abbas, Hampshire, UK",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Cuculus_canorus",
+    "ext": "jpg"
+  },
+  "waegari": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Alexis Lours",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ardea_cinerea",
+    "ext": "jpg"
+  },
+  "kkachi": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "artist": "Yoo Chung",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pica_sericea",
+    "ext": "jpg"
+  },
+  "steller-sea-eagle": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Michael Pinczolits",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Haliaeetus_pelagicus",
+    "ext": "jpg"
+  },
+  "whooper-swan": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "artist": "Andreas Trepte",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Cygnus_cygnus",
+    "ext": "jpg"
+  },
+  "african-grey-parrot": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Florettesokeng",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Psittacus_erithacus",
+    "ext": "jpg"
+  },
+  "common-ostrich": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Yathin S Krishnappa",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Struthio_camelus",
+    "ext": "jpg"
+  },
+  "emperor-penguin": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Ian Duffy from UK",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Aptenodytes_forsteri",
+    "ext": "jpg"
+  },
+  "oriental-scops-owl": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "JJ Harrison",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Otus_sunia",
+    "ext": "jpg"
+  },
+  "daurian-redstart": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Laitche",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Phoenicurus_auroreus",
+    "ext": "jpg"
+  },
+  "common-kingfisher": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Tony Wood",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Alcedo_atthis",
+    "ext": "jpg"
+  },
+  "black-tailed-gull": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Larus_crassirostris",
+    "ext": "jpg"
+  },
+  "eurasian-eagle-owl": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Martin Mecnarowski (http://www.photomecan.eu/)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Bubo_bubo",
+    "ext": "jpg"
+  },
+  "crucian-carp": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "לינה אבוגוש",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Carassius_auratus",
+    "ext": "jpg"
+  },
+  "common-carp": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "George Chernilevsky",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Cyprinus_carpio",
+    "ext": "jpg"
+  },
+  "amur-catfish": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "rhosoi",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Silurus_asotus",
+    "ext": "jpg"
+  },
+  "mandarin-fish": {
+    "found": true,
+    "license": "KOGL Type 1",
+    "artist": "National Institute of Ecology",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Siniperca_scherzeri",
+    "ext": "jpg"
+  },
+  "ayu-sweetfish": {
+    "found": false
+  },
+  "mud-loach": {
+    "found": true,
+    "license": "Public domain",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Misgurnus_anguillicaudatus",
+    "ext": "jpg"
+  },
+  "northern-snakehead": {
+    "found": true,
+    "license": "Public domain",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Channa_argus",
+    "ext": "png"
+  },
+  "sailfin-sandfish": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "The U.S. Food and Drug Administration",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Arctoscopus_japonicus",
+    "ext": "jpg"
+  },
+  "olive-flounder": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "User:Vmenkov",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Paralichthys_olivaceus",
+    "ext": "jpg"
+  },
+  "great-white-shark": {
+    "found": true,
+    "license": "CC BY 2.5",
+    "artist": "Pterantula (Terry Goss) at en.wikipedia",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Carcharodon_carcharias",
+    "ext": "jpg"
+  },
+  "namsaengi": {
+    "found": true,
+    "license": "CC BY 3.0",
+    "artist": "Mark O’Shea",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Mauremys_reevesii",
+    "ext": "jpg"
+  },
+  "jara": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Kim, Hyun-tae",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pelodiscus_maackii",
+    "ext": "jpg"
+  },
+  "dorongnyong": {
+    "found": true,
+    "license": "KOGL Type 1",
+    "artist": "김종범, 민미숙, 박대식, 송재영",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Hynobius_leechii",
+    "ext": "jpg"
+  },
+  "dukkeobi": {
+    "found": true,
+    "license": "CC BY 3.0",
+    "artist": "Holger Krisp",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Bufo_sachalinensis",
+    "ext": "jpg"
+  },
+  "cheonggaeguri": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "池田正樹 (talk)masaki ikeda",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Dryophytes_japonicus",
+    "ext": "jpg"
+  },
+  "yuhyeolmogi": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Yasunori Koide",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Rhabdophis_tigrinus",
+    "ext": "jpg"
+  },
+  "neungguryeongi": {
+    "found": true,
+    "license": "KOGL Type 1",
+    "artist": "Korean National Institute of Biological Resources",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Lycodon_rufozonatus",
+    "ext": "jpeg"
+  },
+  "nailagoe": {
+    "found": true,
+    "license": "CC BY-SA 2.0",
+    "artist": "Dewet",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Crocodylus_niloticus",
+    "ext": "jpg"
+  },
+  "chorogiguana": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Hans Hillewaert",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Iguana_iguana",
+    "ext": "jpg"
+  },
+  "pyobeomchameleon": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Charles J. Sharp",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Furcifer_pardalis",
+    "ext": "jpg"
+  },
+  "jangsu-pungdengi": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Gombe at Japanese Wikipedia",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Allomyrina_dichotoma",
+    "ext": "jpg"
+  },
+  "wang-saseumbeolle": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "keusju",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Dorcus_hopei",
+    "ext": "jpg"
+  },
+  "chammaemi": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Alpsdake",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Hyalessa_maculaticollis",
+    "ext": "jpg"
+  },
+  "bangakkaebi": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "池田正樹 (talk)masaki ikeda",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Acrida_cinerea",
+    "ext": "jpg"
+  },
+  "wang-samagwi": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Luc Viatour",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Tenodera_sinensis",
+    "ext": "jpg"
+  },
+  "muljanggun": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "artist": "OpenCage",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Lethocerus_deyrollei",
+    "ext": "jpg"
+  },
+  "neut-bandutbuli": {
+    "found": true,
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pyrocoelia_rufa",
+    "ext": "jpg"
+  },
+  "baechu-huinnabi": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Sarefo",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pieris_rapae",
+    "ext": "jpg"
+  },
+  "horang-nabi": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Peellden",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Papilio_xuthus",
+    "ext": "jpg"
+  },
+  "chilseong-mudangbeolle": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Photographer: Dominik Stodulski   Graphic Processing: User:MathKnight",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Coccinella_septempunctata",
+    "ext": "jpg"
+  },
+  "yeochi": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Alexey Yakovlev",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Gampsocleis_sedakovii_obscura",
+    "ext": "jpg"
+  },
+  "wangjamjari": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Andreas Eichler",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Anax_parthenope_julius",
+    "ext": "jpg"
+  },
+  "kkulbeol": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "artist": "Andreas Trepte",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Apis_mellifera",
+    "ext": "jpg"
+  },
+  "ilbonwanggaemi": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "KKPCW",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Camponotus_japonicus",
+    "ext": "jpg"
+  },
+  "mulbanggae": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "KENPEI",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Cybister_japonicus",
+    "ext": "jpg"
+  },
+  "sogeumjaengi": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Yasunori Koide",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Aquarius_paludum",
+    "ext": "jpg"
+  },
+  "haneulso": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "kumo from unknown",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Batocera_lineolata",
+    "ext": "jpg"
+  },
+  "pungdeng-i": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Hectonichus",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Mimela_splendens",
+    "ext": "jpg"
+  },
+  "mudanggeomi": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Christina Butler from Georgia, United States",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Trichonephila_clavata",
+    "ext": "jpg"
+  },
+  "asiawangjeongal": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Hectonichus",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Heterometrus_longimanus",
+    "ext": "jpg"
+  },
+  "wangjine": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Yasunori Koide",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Scolopendra_mutilans",
+    "ext": "jpg"
+  },
+  "myeongjudalpaengi": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "artist": "opencage.info",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Acusta_despecta",
+    "ext": "png"
+  },
+  "byeolbulgasari": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "miya",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Patiria_pectinifera",
+    "ext": "jpg"
+  },
+  "boreumdalmulhaepari": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Luc Viatour",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Aurelia_aurita",
+    "ext": "jpg"
+  },
+  "chammuneo": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Kingfisher",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Octopus_sinensis",
+    "ext": "jpg"
+  },
+  "sarojingeo": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "self",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Todarodes_pacificus",
+    "ext": "jpg"
+  },
+  "daege": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Totti",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Chionoecetes_opilio",
+    "ext": "jpg"
+  },
+  "jipge": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Linda Tanner",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pagurus_minutus",
+    "ext": "jpg"
+  },
+  "haema": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Bae Jiwon (뽀그르)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Hippocampus_haema",
+    "ext": "jpg"
+  },
+  "borasseonggae": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Peter Southwood",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Heliocidaris_crassispina",
+    "ext": "jpg"
+  },
+  "siberian-chipmunk": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "AndiW 10:51:45, 2005-09-04 (UTC)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Tamias_sibiricus",
+    "ext": "jpg"
+  },
+  "korean-squirrel": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Peter Trimming",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Sciurus_vulgaris",
+    "ext": "jpg"
+  },
+  "korean-mole": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "pintail",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Mogera_robusta",
+    "ext": "jpg"
+  },
+  "greater-horseshoe-bat": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Charles J. Sharp",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Rhinolophus_ferrumequinum",
+    "ext": "jpg"
+  },
+  "amur-hedgehog": {
+    "found": true,
+    "license": "Attribution",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Erinaceus_amurensis",
+    "ext": "jpg"
+  },
+  "siberian-weasel": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Dibyendu Ash",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Mustela_sibirica",
+    "ext": "jpg"
+  },
+  "leopard-cat": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Abujoy",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Prionailurus_bengalensis",
+    "ext": "jpg"
+  },
+  "spotted-seal": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "NOAA Fisheries",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Phoca_largha",
+    "ext": "jpg"
+  },
+  "steller-sea-lion": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Алексей Алтухов",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Eumetopias_jubatus",
+    "ext": "jpg"
+  },
+  "sea-otter": {
+    "found": true,
+    "license": "CC BY-SA 2.0",
+    "artist": "Marshal Hedin from San Diego",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Enhydra_lutris",
+    "ext": "jpg"
+  },
+  "triceratops": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Source: Allie_Caulfield  Derivative: User:MathKnight",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Triceratops_horridus",
+    "ext": "jpg"
+  },
+  "ankylosaurus": {
+    "found": true,
+    "license": "CC BY-SA 2.0",
+    "artist": "Tim Evanson",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ankylosaurus_magniventris",
+    "ext": "jpg"
+  },
+  "stegosaurus": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Susannah Maidment et al. &amp; Natural History Museum, London",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Stegosaurus_stenops",
+    "ext": "jpg"
+  },
+  "pachycephalosaurus": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "IJReid",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pachycephalosaurus_wyomingensis",
+    "ext": "jpg"
+  },
+  "protoceratops": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Tadek Kurpaski from London, Poland",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Protoceratops_andrewsi",
+    "ext": "jpg"
+  },
+  "chasmosaurus": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Eduard Solà",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Chasmosaurus_belli",
+    "ext": "jpg"
+  },
+  "styracosaurus": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "LittleLazyLass",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Styracosaurus_albertensis",
+    "ext": "jpg"
+  },
+  "iguanodon": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Ben2",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Iguanodon_bernissartensis",
+    "ext": "jpg"
+  },
+  "maiasaura": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Meridas (Vladimír Socha)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Maiasaura_peeblesorum",
+    "ext": "jpg"
+  },
+  "lambeosaurus": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "IJReid",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Lambeosaurus_lambei",
+    "ext": "jpg"
+  },
+  "lesothosaurus": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Ghedo",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Lesothosaurus_diagnosticus",
+    "ext": "jpg"
+  },
+  "scelidosaurus": {
+    "found": true,
+    "license": "CC BY-SA 2.0",
+    "artist": "5of7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Scelidosaurus_harrisonii",
+    "ext": "jpg"
+  },
+  "kentrosaurus": {
+    "found": true,
+    "license": "CC BY 3.0",
+    "artist": "LoKiLeCh",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Kentrosaurus_aethiopicus",
+    "ext": "jpg"
+  },
+  "psittacosaurus": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Psittacosaurus_mongoliensis",
+    "ext": "jpg"
+  },
+  "pachyrhinosaurus": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Etemenanki3",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pachyrhinosaurus_canadensis",
+    "ext": "jpg"
+  },
+  "hypsilophodon": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "MWAK",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Hypsilophodon_foxii",
+    "ext": "jpg"
+  },
+  "camptosaurus": {
+    "found": true,
+    "license": "CC BY-SA 2.0",
+    "artist": "★Kumiko★",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Camptosaurus_dispar",
+    "ext": "jpg"
+  },
+  "ouranosaurus": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Filippo Bertozzo​​, Fabio Marco Dalla Vecchia​, Matteo Fabbri",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ouranosaurus_nigeriensis",
+    "ext": "png"
+  },
+  "tenontosaurus": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Rodney",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Tenontosaurus_tilletti",
+    "ext": "jpg"
+  },
+  "corythosaurus": {
+    "found": true,
+    "license": "CC BY-SA 2.0",
+    "artist": "James Tiffin Jr.",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Corythosaurus_casuarius",
+    "ext": "jpg"
+  },
+  "eoraptor": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Rjcastillo",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Eoraptor_lunensis",
+    "ext": "jpg"
+  },
+  "herrerasaurus": {
+    "found": true,
+    "license": "CC BY-SA 2.0",
+    "artist": "★Kumiko★",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Herrerasaurus_ischigualastensis",
+    "ext": "jpg"
+  },
+  "plateosaurus": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "FunkMonk",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Plateosaurus_trossingensis",
+    "ext": "jpg"
+  },
+  "apatosaurus": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "AbstractionBlue",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Apatosaurus_ajax",
+    "ext": "jpg"
+  },
+  "camarasaurus": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "Henry Osborn, Charles Mook, ED Cope",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Camarasaurus_supremus",
+    "ext": "png"
+  },
+  "diplodocus": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "ScottRobertAnselmo",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Diplodocus_longus",
+    "ext": "jpg"
+  },
+  "saltasaurus": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "LadyofHats Altered by Steveoc 86 and FunkMonk",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Saltasaurus_loricatus",
+    "ext": "png"
+  },
+  "coelophysis": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "James St. John",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Coelophysis_bauri",
+    "ext": "jpg"
+  },
+  "dilophosaurus": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Eduard Solà",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Dilophosaurus_wetherilli",
+    "ext": "jpg"
+  },
+  "carnotaurus": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Carnotaurus, Chlupáč Museum, Prague-2.jpg: Czech Wikipedia user Packa\nderivative work: Hic et nunc",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Carnotaurus_sastrei",
+    "ext": "jpg"
+  },
+  "baryonyx": {
+    "found": true,
+    "license": "CC BY-SA 2.0",
+    "artist": "★Kumiko★",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Baryonyx_walkeri",
+    "ext": "jpg"
+  },
+  "carcharodontosaurus": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Matthew Deery",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Carcharodontosaurus_saharicus",
+    "ext": "jpg"
+  },
+  "compsognathus": {
+    "found": true,
+    "license": "CC BY-SA 2.0",
+    "artist": "Zach Tirrell from Plymouth, USA",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Compsognathus_longipes",
+    "ext": "jpg"
+  },
+  "sinosauropteryx": {
+    "found": true,
+    "license": "CC BY-SA 2.0",
+    "artist": "Sam / Olai Ose / Skjaervoy from Zhangjiagang, China",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Sinosauropteryx_prima",
+    "ext": "jpg"
+  },
+  "tyrannosaurus": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "ScottRobertAnselmo",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Tyrannosaurus_rex",
+    "ext": "jpg"
+  },
+  "oviraptor": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "Internet Archive Book Images",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oviraptor_philoceratops",
+    "ext": "jpg"
+  },
+  "caudipteryx": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Ra'ike (see also: de:Benutzer:Ra'ike)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Caudipteryx_zoui",
+    "ext": "jpg"
+  },
+  "therizinosaurus": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Yuya Tamai from Gifu, Japan",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Therizinosaurus_cheloniformis",
+    "ext": "jpg"
+  },
+  "velociraptor": {
+    "found": true,
+    "license": "CC BY 3.0",
+    "artist": "Eduard Solà Vázquez",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Velociraptor_mongoliensis",
+    "ext": "jpg"
+  },
+  "deinonychus": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Jonathan Chen",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Deinonychus_antirrhopus",
+    "ext": "jpg"
+  },
+  "archaeopteryx": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "H. Raab (User: Vesta)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Archaeopteryx_lithographica",
+    "ext": "jpg"
+  },
+  "koreanosaurus-boseongensis": {
+    "found": true,
+    "license": "CC BY 2.5",
+    "artist": "Jung-Kyun Kim, Yong-Eun Kwon, Sang-Gil Lee, Chang-Yeon Kim, Jin-Gyu Kim, Min Huh,Eunji Lee, Youn-Joong Kim",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Koreanosaurus_boseongensis",
+    "ext": "jpg"
+  },
+  "koreaceratops-hwaseongensis": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Jjw",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Koreaceratops_hwaseongensis",
+    "ext": "jpg"
+  },
+  "tarbosaurus": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Lwilcoxson",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Tarbosaurus_bataar",
+    "ext": "jpg"
+  },
+  "spinosaurus": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "3blindMies",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Spinosaurus_aegyptiacus",
+    "ext": "jpg"
+  },
+  "megalosaurus": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Ballista at English Wikipedia",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Megalosaurus_bucklandii",
+    "ext": "jpg"
+  },
+  "troodon": {
+    "found": true,
+    "license": "CC0",
+    "artist": "Montanoceratops",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Troodon_formosus",
+    "ext": "png"
+  },
+  "heterodontosaurus": {
+    "found": true,
+    "license": "CC0",
+    "artist": "Daderot",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Heterodontosaurus_tucki",
+    "ext": "jpg"
+  },
+  "woolly-mammoth": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "Lou.gruber",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Mammuthus_primigenius",
+    "ext": "jpg"
+  },
+  "dunkleosteus": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "James St. John",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Dunkleosteus_terrelli",
+    "ext": "jpg"
+  },
+  "snow-leopard": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "Irbis1983",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Panthera_uncia",
+    "ext": "jpg"
+  },
+  "northern-fur-seal": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Carina Gsottbauer",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Callorhinus_ursinus",
+    "ext": "jpg"
+  },
+  "bornean-orangutan": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Nanosanchez",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pongo_pygmaeus",
+    "ext": "jpg"
+  },
+  "oriental-stork": {
+    "found": true,
+    "license": "CC BY 2.1 jp",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ciconia_boyciana",
+    "ext": "jpg"
+  },
+  "sturgeon": {
+    "found": false
+  },
+  "leiocassis": {
+    "found": true,
+    "license": "CC0",
+    "artist": "Kinori",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Leiocassis_longirostris",
+    "ext": "jpg"
+  },
+  "komodo-dragon": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "James Jolokia (james1203)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Varanus_komodoensis",
+    "ext": "jpg"
+  },
+  "trilobite": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "Wilson44691",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Elrathia_kingii",
+    "ext": "jpg"
+  },
+  "soegireogi": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Frank Schulenburg",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Anser_albifrons",
+    "ext": "jpg"
+  },
+  "malttonggari": {
+    "found": true,
+    "license": "CC BY 3.0",
+    "artist": "NOZO",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Buteo_japonicus",
+    "ext": "jpg"
+  },
+  "gachangori": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Sun Jiao (Interaccoonale)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Sibirionetta_formosa",
+    "ext": "jpg"
+  },
+  "mulggachi": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "zinogre",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Cyanopica_cyanus",
+    "ext": "jpg"
+  },
+  "hwangsaemae": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "M.Nishimura",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Butastur_indicus",
+    "ext": "jpg"
+  },
+  "gaettongjippagwi": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Forest Botial-Jarvis",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Turdus_eunomus",
+    "ext": "jpeg"
+  },
+  "norangteokmyeotsae": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Alpsdake",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Emberiza_elegans",
+    "ext": "jpg"
+  },
+  "soebueonghi": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Sumeet Moghe",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Asio_flammeus",
+    "ext": "jpg"
+  },
+  "baemjangeo": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "artist": "opencage",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Anguilla_japonica",
+    "ext": "jpg"
+  },
+  "aldabra-giant-tortoise": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "Yotcmdr",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Aldabrachelys_gigantea",
+    "ext": "jpg"
+  },
+  "bowmouth-guitarfish": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "artist": "Rhina_ancylostoma.jpg: OpenCage\nderivative work: Yzx",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Rhina_ancylostoma",
+    "ext": "jpg"
+  },
+  "mallard": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "artist": "This picture was realized by Richard Bartz by using a Canon EF 70-300mm f/4-5.6 IS USM Lens",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Anas_platyrhynchos",
+    "ext": "jpg"
+  },
+  "little-grebe": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "artist": "Andreas Trepte",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Tachybaptus_ruficollis",
+    "ext": "jpg"
+  },
+  "common-sandpiper": {
+    "found": true,
+    "license": "CC BY 3.0",
+    "artist": "JJ Harrison (https://www.jjharrison.com.au/)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Actitis_hypoleucos",
+    "ext": "jpg"
+  },
+  "red-throated-loon": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Charles J. Sharp",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Gavia_stellata",
+    "ext": "jpg"
+  },
+  "little-ringed-plover": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Zeynel Cebeci",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Charadrius_dubius",
+    "ext": "jpg"
+  },
+  "scaly-sided-merganser": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "BS Thurner Hof",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Mergus_squamatus",
+    "ext": "jpg"
+  },
+  "northern-pintail": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "J.M.Garg",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Anas_acuta",
+    "ext": "jpg"
+  },
+  "taiga-bean-goose": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Andrey Gulivanov",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Anser_fabalis",
+    "ext": "jpg"
+  },
+  "greensandpiper": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Swardeepak",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Tringa_ochropus",
+    "ext": "jpg"
+  },
+  "hoopoe": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Greg Schechter from San Francisco, USA",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Upupa_epops",
+    "ext": "jpg"
+  },
+  "collaredscopsowl": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Shantanu Kuveskar",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Otus_bakkamoena",
+    "ext": "jpg"
+  },
+  "eurasianhobby": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Shantanu Kuveskar",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Falco_subbuteo",
+    "ext": "jpg"
+  },
+  "brownshrike": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "JJ Harrison (https://www.jjharrison.com.au/)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Lanius_cristatus",
+    "ext": "jpg"
+  },
+  "japanesetit": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Shantanu Kuveskar",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Parus_minor",
+    "ext": "jpg"
+  },
+  "eurasiantreesparrow": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "Laitche",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Passer_montanus",
+    "ext": "jpg"
+  },
+  "frogeatingratsnake": {
+    "found": true,
+    "license": "KOGL Type 1",
+    "artist": "김종범, 민미숙, 박대식, 송재영",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oocatochus_rufodorsatus",
+    "ext": "jpeg"
+  },
+  "shorttailedpitviper": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Kim, Hyun-tae",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Gloydius_brevicaudus",
+    "ext": "jpg"
+  },
+  "koreanskink": {
+    "found": true,
+    "license": "KOGL Type 1",
+    "artist": "Korean National Institute of Biological Resources",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Scincella_vandenburghi",
+    "ext": "jpg"
+  },
+  "zebra-shark": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Felix Frost-Savage",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Stegostoma_tigrinum",
+    "ext": "png"
+  },
+  "mot-ppobi-jipgebeolle": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Kim, Hyun-tae",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Forficula_scudderi",
+    "ext": "jpg"
+  },
+  "keun-jipgebeolle": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Hans Hillewaert",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Labidura_riparia",
+    "ext": "jpg"
+  },
+  "gomarobeu-jipgebeolle": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Donald Hobern from Copenhagen, Denmark",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Timomenus_komarowi",
+    "ext": "jpg"
+  },
+  "jom-jipgebeolle": {
+    "found": true,
+    "license": "CC BY 3.0",
+    "artist": "Forest &amp; Kim Starr",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Euborellia_stali",
+    "ext": "jpg"
+  },
+  "min-jipgebeolle": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Pete Lypkie",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Anisolabis_maritima",
+    "ext": "jpg"
+  },
+  "san-bakwi": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "David Monniaux",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Blattella_nipponica",
+    "ext": "jpg"
+  },
+  "ijil-bakwi": {
+    "found": true,
+    "license": "CC BY 2.5",
+    "artist": "Gary Alpert",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Periplaneta_americana",
+    "ext": "jpg"
+  },
+  "daebeolle": {
+    "found": true,
+    "license": "CC BY 2.1 jp",
+    "artist": "あうる",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ramulus_irregulariterdentatus",
+    "ext": "jpg"
+  },
+  "bunhong-nalgae-daebeolle": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Drägüs",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Micadina_phluctainoides",
+    "ext": "jpg"
+  },
+  "gin-suyeom-daebeolle": {
+    "found": false
+  },
+  "pulmuchi": {
+    "found": true,
+    "license": "CC BY-SA 2.0 de",
+    "artist": "Jonathan Hornung",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Locusta_migratoria",
+    "ext": "jpg"
+  },
+  "ttang-ganggaji": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "辻畠",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Gryllotalpa_orientalis",
+    "ext": "jpg"
+  },
+  "deung-geomeun-mettugi": {
+    "found": true,
+    "sourceUrl": "https://en.wikipedia.org/wiki/Shirakiacris_shirakii",
+    "ext": "jpg"
+  },
+  "patjungi": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "KENPEI",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oedaleus_infernalis",
+    "ext": "jpg"
+  },
+  "dukkeobi-mettugi": {
+    "found": true,
+    "license": "CC BY-SA 2.0",
+    "artist": "Len Worthington",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Trilophidia_annulata",
+    "ext": "jpg"
+  },
+  "byeo-mettugi": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Kim, Hyun-tae\n\nDepicted place:  Seosan, Chungcheongnam-do, South Korea  (36°44′56″N 126°26′24″E﻿ / ﻿36.7488116667°N 126.4399416667°E﻿ / 36.7488116667; 126.4399416667)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oxya_sinuosa",
+    "ext": "jpg"
+  },
+  "seom-seogu-mettugi": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Crisco 1492",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Atractomorpha_lata",
+    "ext": "jpg"
+  },
+  "min-eori-yeochi": {
+    "found": false
+  },
+  "bejjangi-buchi": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "L. Shyamal",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ducetia_japonica",
+    "ext": "jpg"
+  },
+  "gopdeungi": {
+    "found": false
+  },
+  "geomjeong-gopdeungi": {
+    "found": false
+  },
+  "wang-gwitturami": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "LiCheng Shih",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Teleogryllus_emma",
+    "ext": "jpg"
+  },
+  "cheongsol-gwitturami": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "池田正樹 (talk)masaki ikeda",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Truljalia_hibinonis",
+    "ext": "jpg"
+  },
+  "jin-gangdorae": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "JJ Harrison (https://www.jjharrison.com.au/)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oyamia_nigribasis",
+    "ext": "jpg"
+  },
+  "dununn-gangdorae": {
+    "found": false
+  },
+  "doenjang-jamjari": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Jeevan Jose, Kerala, India",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pantala_flavescens",
+    "ext": "jpg"
+  },
+  "mil-jamjari": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Charles J. Sharp",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Orthetrum_albistylum",
+    "ext": "jpg"
+  },
+  "keun-mil-jamjari": {
+    "found": true,
+    "license": "GFDL 1.2",
+    "artist": "Muhammad Mahdi Karim",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Orthetrum_melania",
+    "ext": "jpg"
+  },
+  "kkoma-jamjari": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Alpsdake",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Nannophya_pygmaea",
+    "ext": "jpg"
+  },
+  "black-winged-damselfly": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Hectonichus",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Atrocalopteryx_atrata",
+    "ext": "jpg"
+  },
+  "giant-golden-ringtail-dragonfly": {
+    "found": true,
+    "sourceUrl": "https://en.wikipedia.org/wiki/Anotogaster_sieboldii",
+    "ext": "jpg"
+  },
+  "large-black-cicada": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "Horace Knight",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Cryptotympana_atrata",
+    "ext": "jpg"
+  },
+  "large-brown-cicada": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "池田正樹",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Graptopsaltria_nigrofuscata",
+    "ext": "jpg"
+  },
+  "small-brown-cicada": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Alpsdake",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Meimuna_opalifera",
+    "ext": "jpg"
+  },
+  "saucer-bug": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Michael Raupac, Lars Hendrich, Stefan M. Küchler, Fabian Deister, Jerome Moriniere, Martin M. Gossner",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Aphelocheirus_sp.",
+    "ext": "jpg"
+  },
+  "water-scorpion": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "artist": "Daiju Azuma",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ranatra_chinensis",
+    "ext": "jpg"
+  },
+  "large-water-bug": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "Dieno",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Appasus_major",
+    "ext": "jpg"
+  },
+  "mosquito": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Alvesgaspar",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Culex_pipiens",
+    "ext": "jpg"
+  },
+  "horsehair-worm": {
+    "found": true,
+    "license": "CC BY 3.0",
+    "artist": "jkirkhart35",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Gordius_sp.",
+    "ext": "jpg"
+  },
+  "multtaengttaengi": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Hectonichus",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Hydrophilus_acuminatus",
+    "ext": "jpg"
+  },
+  "neopjeok-saseumbeolle": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "keusju",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Dorcus_titanus_castanicolor",
+    "ext": "jpg"
+  },
+  "saseumbeolle": {
+    "found": false
+  },
+  "haneulso-2": {
+    "found": true,
+    "license": "CC BY 2.0",
+    "artist": "Dick Culbert from Gibsons, B.C., Canada",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Neocerambyx_raddei",
+    "ext": "jpg"
+  },
+  "wangbitsal-bangabeolle": {
+    "found": false
+  },
+  "ppulsottongguri": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Bruce Marlin",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Copris_ochus",
+    "ext": "jpg"
+  },
+  "jeju-dorongnyong": {
+    "found": true,
+    "license": "KOGL Type 1",
+    "artist": "National Institute of Ecology",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Hynobius_quelpaertensis",
+    "ext": "jpg"
+  },
+  "ikki-dorongnyong": {
+    "found": true,
+    "license": "KOGL Type 1",
+    "artist": "구교성",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Karsenia_koreana",
+    "ext": "jpg"
+  },
+  "gori-dorongnyong": {
+    "found": true,
+    "license": "KOGL Type 1",
+    "artist": "양병국",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Hynobius_yangi",
+    "ext": "jpg"
+  },
+  "geum-gaeguri": {
+    "found": true,
+    "license": "KOGL Type 1",
+    "artist": "National Institute of Ecology",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pelophylax_chosenicus",
+    "ext": "jpg"
+  },
+  "cham-gaeguri": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Alpsdake",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pelophylax_nigromaculatus",
+    "ext": "jpg"
+  },
+  "om-gaeguri": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Glandirana_rugosa",
+    "ext": "jpg"
+  },
+  "maengkkongi": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Pierre Fidenci",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Kaloula_borealis",
+    "ext": "jpeg"
+  },
+  "mudang-gaeguri": {
+    "found": true,
+    "license": "CC0",
+    "artist": "Vassil",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Bombina_orientalis",
+    "ext": "jpg"
+  },
+  "mul-dukkeobi": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Kim, Hyun-tae",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Bufo_stejnegeri",
+    "ext": "jpg"
+  },
+  "yeoneo": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "A. Hoen and Co.",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oncorhynchus_keta",
+    "ext": "jpg"
+  },
+  "sungeo": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Diego Delso",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Mugil_cephalus",
+    "ext": "jpg"
+  },
+  "pirami": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Zacco_platypus",
+    "ext": "jpg"
+  },
+  "napjaru": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Tanago",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Tanakia_lanceolata",
+    "ext": "jpg"
+  },
+  "molgae": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Squalidus_japonicus",
+    "ext": "jpg"
+  },
+  "chammolgae": {
+    "found": true,
+    "license": "CC0",
+    "artist": "Kinori",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Squalidus_chankaensis_tsuchigae",
+    "ext": "jpg"
+  },
+  "dongjagae": {
+    "found": true,
+    "license": "CC BY 3.0",
+    "artist": "Huangdan2060",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Tachysurus_fulvidraco",
+    "ext": "jpg"
+  },
+  "mireo": {
+    "found": true,
+    "license": "KOGL Type 1",
+    "artist": "National Institute of Ecology",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Rhinogobius_brunneus",
+    "ext": "jpg"
+  },
+  "moraemuji": {
+    "found": true,
+    "license": "CC BY-SA 3.0",
+    "artist": "Seotaro",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pseudogobio_esocinus",
+    "ext": "jpg"
+  },
+  "swiri": {
+    "found": false
+  },
+  "kkeuri": {
+    "found": true,
+    "license": "CC BY 3.0",
+    "artist": "Frank M. Greco",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Opsariichthys_bidens",
+    "ext": "jpg"
+  },
+  "junggogi": {
+    "found": false
+  },
+  "mikkuraji": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Meng-Chi Hung",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Misgurnus_mizolepis",
+    "ext": "jpg"
+  },
+  "napjiri": {
+    "found": true,
+    "license": "Public domain",
+    "artist": "Temminck and Schlegel",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Acheilognathus_rhombeus",
+    "ext": "jpeg"
+  },
+  "kkeokji": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Arou322",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Coreoperca_herzi",
+    "ext": "jpg"
+  },
+  "chammaja": {
+    "found": true,
+    "license": "CC BY-SA 2.5",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Hemibarbus_longirostris",
+    "ext": "jpg"
+  },
+  "saekomikkuri": {
+    "found": false
+  },
+  "wangjonggae": {
+    "found": true,
+    "license": "CC BY 3.0",
+    "artist": "David Perez",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Iksookimia_longicorpus",
+    "ext": "jpg"
+  },
+  "beodeulchi": {
+    "found": true,
+    "license": "CC BY 4.0",
+    "artist": "Kim, Hyun-tae",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Rhynchocypris_oxycephalus",
+    "ext": "jpg"
+  },
+  "miyugi": {
+    "found": false
+  },
+  "eoreumchi": {
+    "found": true,
+    "license": "KOGL Type 1",
+    "artist": "National Institute of Ecology",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Hemibarbus_mylodon",
+    "ext": "jpg"
+  },
+  "kkotmaemi": {
+    "found": true,
+    "license": "CC BY-SA 4.0",
+    "artist": "Rhododendrites",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Lycorma_delicatula",
+    "ext": "jpg"
+  }
+}

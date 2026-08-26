@@ -1,11 +1,14 @@
 'use client'
 import { Suspense, useEffect, useState } from 'react'
+import Image from 'next/image'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { findSpeciesById } from '@/data/species'
-import { CLASS_DESCRIPTIONS } from '@/data/classDescriptions'
+import { CLASS_DESCRIPTIONS, CLASS_HINTS } from '@/data/classDescriptions'
 import { buildClassGuessChoices } from '@/lib/quiz'
 import { queueOrSend } from '@/lib/offlineQueue'
 import { OBSERVATION_TAGS } from '@/lib/types'
+import { getSpeciesPhoto } from '@/lib/speciesPhoto'
+import { PhotoCredit } from '@/components/PhotoCredit'
 
 type ChipKey = 'taxonomy' | 'features' | 'food' | 'habitat' | 'whyClass'
 
@@ -63,6 +66,8 @@ function SpeciesDetailContent() {
     return <main className="p-4 text-center">활동 코드를 확인하는 중이에요...</main>
   }
 
+  const photo = getSpeciesPhoto(species.id)
+
   function ask(key: ChipKey) {
     if (!answers.includes(key)) setAnswers((prev) => [...prev, key])
   }
@@ -118,17 +123,22 @@ function SpeciesDetailContent() {
             <path d="M15 18l-6-6 6-6" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>
-        <div className="w-24 h-24 rounded-[28px] bg-white flex items-center justify-center shadow-[0_12px_26px_-10px_oklch(0.3_0.08_150_/_0.5)] border-4 border-white/50">
-          <svg width="52" height="52" viewBox="0 0 24 24" fill="none">
-            <circle cx="7" cy="12" r="2" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
-            <circle cx="11" cy="9" r="1.8" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
-            <circle cx="15" cy="9" r="1.8" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
-            <ellipse cx="12" cy="15.5" rx="5" ry="3.6" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
-          </svg>
+        <div className="relative w-24 h-24 rounded-[28px] bg-white flex items-center justify-center shadow-[0_12px_26px_-10px_oklch(0.3_0.08_150_/_0.5)] border-4 border-white/50 overflow-hidden">
+          {photo ? (
+            <Image src={photo.url} alt={species.koreanName} fill sizes="96px" className="object-cover" />
+          ) : (
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none">
+              <circle cx="7" cy="12" r="2" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
+              <circle cx="11" cy="9" r="1.8" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
+              <circle cx="15" cy="9" r="1.8" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
+              <ellipse cx="12" cy="15.5" rx="5" ry="3.6" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
+            </svg>
+          )}
         </div>
         <div className="text-center">
           <p className="font-display text-2xl">{species.koreanName}</p>
           <p className="text-[13px] italic opacity-90 mt-0.5">{species.scientificName}</p>
+          {photo && <PhotoCredit photo={photo} className="text-white block mt-1" />}
         </div>
       </div>
 
@@ -139,6 +149,12 @@ function SpeciesDetailContent() {
             <p className="font-display text-xl mt-2">이 친구는 어느 무리(강)일까요?</p>
           </div>
 
+          {photo && (
+            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_10px_22px_-12px_oklch(0.35_0.08_150_/_0.35)]">
+              <Image src={photo.url} alt={species.koreanName} fill sizes="400px" className="object-cover" />
+            </div>
+          )}
+
           <div className="flex flex-col gap-2.5">
             {guessChoices.choices.map((choice, i) => {
               const isPicked = guessPicked === i
@@ -148,7 +164,7 @@ function SpeciesDetailContent() {
                   key={choice}
                   onClick={() => setGuessPicked(i)}
                   disabled={guessPicked !== null}
-                  className="h-[54px] rounded-2xl bg-white flex items-center justify-center font-bold text-[14.5px] shadow-[0_6px_14px_-10px_oklch(0.35_0.08_150_/_0.3)]"
+                  className="min-h-[58px] rounded-2xl bg-white flex flex-col items-center justify-center gap-0.5 py-2.5 shadow-[0_6px_14px_-10px_oklch(0.35_0.08_150_/_0.3)]"
                   style={
                     isCorrectChoice
                       ? { background: 'var(--color-forest-soft)', boxShadow: '0 0 0 2px var(--color-forest-deep) inset' }
@@ -157,7 +173,8 @@ function SpeciesDetailContent() {
                         : undefined
                   }
                 >
-                  {choice}
+                  <span className="font-bold text-[14.5px]">{choice}</span>
+                  {CLASS_HINTS[choice] && <span className="text-[11.5px] text-neutral-500 text-center px-3">{CLASS_HINTS[choice]}</span>}
                 </button>
               )
             })}

@@ -1,7 +1,9 @@
 'use client'
 import { Suspense, useState } from 'react'
+import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 import { searchSpeciesByName } from '@/data/species'
+import { getSpeciesPhoto } from '@/lib/speciesPhoto'
 
 function SearchContent() {
   const params = useSearchParams()
@@ -34,26 +36,33 @@ function SearchContent() {
       )}
 
       <div className="flex-1 overflow-y-auto px-5 pb-6 pt-1 flex flex-col gap-3">
-        {results.map((s) => (
-          <a
-            key={s.id}
-            href={`/student/species/${s.id}?code=${code}&nickname=${nickname}`}
-            className="bg-white rounded-[20px] p-3 flex gap-3.5 items-center shadow-[0_6px_16px_-12px_oklch(0.35_0.08_150_/_0.3)]"
-          >
-            <span className="w-14 h-14 rounded-2xl bg-forest-soft flex items-center justify-center shrink-0">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                <circle cx="7" cy="12" r="2" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
-                <circle cx="11" cy="9" r="1.8" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
-                <circle cx="15" cy="9" r="1.8" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
-                <ellipse cx="12" cy="15.5" rx="5" ry="3.6" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
-              </svg>
-            </span>
-            <div className="min-w-0">
-              <p className="font-extrabold text-[15.5px]">{s.koreanName}</p>
-              <p className="text-xs italic text-neutral-500 truncate">{s.scientificName}</p>
-            </div>
-          </a>
-        ))}
+        {results.map((s) => {
+          const photo = getSpeciesPhoto(s.id)
+          return (
+            <a
+              key={s.id}
+              href={`/student/species/${s.id}?code=${code}&nickname=${nickname}`}
+              className="bg-white rounded-[20px] p-3 flex gap-3.5 items-center shadow-[0_6px_16px_-12px_oklch(0.35_0.08_150_/_0.3)]"
+            >
+              <span className="relative w-14 h-14 rounded-2xl bg-forest-soft flex items-center justify-center shrink-0 overflow-hidden">
+                {photo ? (
+                  <Image src={photo.url} alt={s.koreanName} fill sizes="56px" className="object-cover" />
+                ) : (
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                    <circle cx="7" cy="12" r="2" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
+                    <circle cx="11" cy="9" r="1.8" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
+                    <circle cx="15" cy="9" r="1.8" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
+                    <ellipse cx="12" cy="15.5" rx="5" ry="3.6" stroke="var(--color-forest-deep)" strokeWidth="1.6" />
+                  </svg>
+                )}
+              </span>
+              <div className="min-w-0">
+                <p className="font-extrabold text-[15.5px]">{s.koreanName}</p>
+                <p className="text-xs italic text-neutral-500 truncate">{s.scientificName}</p>
+              </div>
+            </a>
+          )
+        })}
         {query && results.length === 0 && (
           <p className="text-neutral-500 text-sm text-center pt-8">검색 결과가 없어요.</p>
         )}

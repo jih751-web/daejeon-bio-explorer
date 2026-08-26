@@ -10,34 +10,45 @@ function makeObs(id: string, speciesId: string, speciesName: string): Observatio
 }
 
 describe('buildQuizQuestions', () => {
-  it('creates one question per observation, each with 4 choices including the correct one', () => {
+  it('creates a species question and a class question per observation, each with 4 choices', () => {
     const observations = [
       makeObs('1', 'saja', '사자'),
       makeObs('2', 'olppaemi', '올빼미'),
     ]
     const questions = buildQuizQuestions(observations)
+    const speciesQuestions = questions.filter((q) => q.type === 'species')
+    const classQuestions = questions.filter((q) => q.type === 'class')
 
-    expect(questions).toHaveLength(2)
-    questions.forEach((q, i) => {
+    expect(questions).toHaveLength(4)
+    expect(speciesQuestions).toHaveLength(2)
+    expect(classQuestions).toHaveLength(2)
+    questions.forEach((q) => {
       expect(q.choices).toHaveLength(4)
-      expect(q.choices[q.correctIndex]).toBe(observations[i].speciesName)
       expect(new Set(q.choices).size).toBe(4) // no duplicate choices
+      expect(q.choices[q.correctIndex]).toBeDefined()
+    })
+    speciesQuestions.forEach((q) => {
+      expect(q.choices).toContain(q.observation.speciesName)
+    })
+    classQuestions.forEach((q) => {
+      const correctClass = findSpeciesById(q.observation.speciesId)?.taxonomy.class
+      expect(q.choices[q.correctIndex]).toBe(correctClass)
     })
   })
 
-  it('still produces a full 4-choice question when only one species has been saved', () => {
+  it('still produces full 4-choice questions when only one species has been saved', () => {
     const observations = [makeObs('1', 'saja', '사자')]
     const questions = buildQuizQuestions(observations)
 
-    expect(questions).toHaveLength(1)
-    expect(questions[0].choices).toHaveLength(4)
-    expect(questions[0].choices[questions[0].correctIndex]).toBe('사자')
+    expect(questions).toHaveLength(2)
+    questions.forEach((q) => expect(q.choices).toHaveLength(4))
+    expect(questions.find((q) => q.type === 'species')?.choices[questions.find((q) => q.type === 'species')!.correctIndex]).toBe('사자')
   })
 
   it('includes at least one distractor from a different taxonomic class (강) than the correct answer', () => {
     const observations = [makeObs('1', 'saja', '사자')] // 사자 = 포유강
     const questions = buildQuizQuestions(observations)
-    const q = questions[0]
+    const q = questions.find((question) => question.type === 'species')!
 
     const correctClass = findSpeciesById('saja')?.taxonomy.class
     const classesInChoices = new Set(
@@ -56,7 +67,7 @@ describe('buildQuizQuestions', () => {
     ]
     const questions = buildQuizQuestions(observations)
 
-    expect(questions).toHaveLength(3)
+    expect(questions).toHaveLength(6)
     questions.forEach((q) => {
       expect(new Set(q.choices).size).toBe(q.choices.length)
       expect(q.choices).toHaveLength(4)

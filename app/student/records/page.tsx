@@ -1,11 +1,13 @@
 'use client'
 import { Suspense, useEffect, useMemo, useState } from 'react'
+import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 import { Observation, QuizResult } from '@/lib/types'
 import { findSpeciesById } from '@/data/species'
 import { CLASS_DESCRIPTIONS } from '@/data/classDescriptions'
 import { computeBadges } from '@/lib/badges'
 import { BadgeList } from '@/components/BadgeList'
+import { getSpeciesPhoto } from '@/lib/speciesPhoto'
 
 interface ClassGroup {
   className: string
@@ -126,18 +128,24 @@ function RecordsContent() {
               )}
 
               <div className="flex flex-col gap-2.5">
-                {group.observations.map((o) => (
+                {group.observations.map((o) => {
+                  const photo = getSpeciesPhoto(o.speciesId)
+                  return (
                   <div
                     key={o.id}
                     className="bg-white rounded-[20px] p-3.5 flex items-start gap-3.5 shadow-[0_6px_16px_-12px_oklch(0.35_0.08_150_/_0.3)]"
                   >
-                    <div className="w-[50px] h-[50px] rounded-[15px] flex items-center justify-center shrink-0" style={{ background: color.bg }}>
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                        <circle cx="7" cy="12" r="2" stroke={color.fg} strokeWidth="1.6" />
-                        <circle cx="11" cy="9" r="1.8" stroke={color.fg} strokeWidth="1.6" />
-                        <circle cx="15" cy="9" r="1.8" stroke={color.fg} strokeWidth="1.6" />
-                        <ellipse cx="12" cy="15.5" rx="5" ry="3.6" stroke={color.fg} strokeWidth="1.6" />
-                      </svg>
+                    <div className="relative w-[50px] h-[50px] rounded-[15px] flex items-center justify-center shrink-0 overflow-hidden" style={{ background: color.bg }}>
+                      {photo ? (
+                        <Image src={photo.url} alt={o.speciesName} fill sizes="50px" className="object-cover" />
+                      ) : (
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                          <circle cx="7" cy="12" r="2" stroke={color.fg} strokeWidth="1.6" />
+                          <circle cx="11" cy="9" r="1.8" stroke={color.fg} strokeWidth="1.6" />
+                          <circle cx="15" cy="9" r="1.8" stroke={color.fg} strokeWidth="1.6" />
+                          <ellipse cx="12" cy="15.5" rx="5" ry="3.6" stroke={color.fg} strokeWidth="1.6" />
+                        </svg>
+                      )}
                     </div>
                     <div className="min-w-0 flex-1 pt-1">
                       <p className="font-extrabold text-[15px]">{o.speciesName}</p>
@@ -165,7 +173,8 @@ function RecordsContent() {
                       </svg>
                     </div>
                   </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
           )

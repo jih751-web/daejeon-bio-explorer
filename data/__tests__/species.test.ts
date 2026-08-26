@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { SPECIES, findSpeciesById, searchSpeciesByName } from '../species'
-import { CLASS_DESCRIPTIONS } from '../classDescriptions'
+import { CLASS_DESCRIPTIONS, CLASS_HINTS } from '../classDescriptions'
 
 describe('species data integrity', () => {
   it('has unique ids', () => {
@@ -36,6 +36,12 @@ describe('species data integrity', () => {
   it('every taxonomy.class value used by a species has a matching CLASS_DESCRIPTIONS entry', () => {
     const usedClasses = new Set(SPECIES.map((s) => s.taxonomy.class))
     const missing = [...usedClasses].filter((c) => !CLASS_DESCRIPTIONS[c])
+    expect(missing).toEqual([])
+  })
+
+  it('every taxonomy.class value used by a species has a matching CLASS_HINTS entry', () => {
+    const usedClasses = new Set(SPECIES.map((s) => s.taxonomy.class))
+    const missing = [...usedClasses].filter((c) => !CLASS_HINTS[c])
     expect(missing).toEqual([])
   })
 })
