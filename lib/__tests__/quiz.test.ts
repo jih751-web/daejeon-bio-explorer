@@ -1,11 +1,12 @@
 import { describe, it, expect } from 'vitest'
-import { buildQuizQuestions } from '../quiz'
+import { buildQuizQuestions, buildClassGuessChoices } from '../quiz'
 import { Observation } from '../types'
 import { SPECIES, findSpeciesById } from '@/data/species'
+import { CLASS_DESCRIPTIONS } from '@/data/classDescriptions'
 
 // speciesId/speciesName pairs must be real entries in data/species.ts so taxonomy lookup works
 function makeObs(id: string, speciesId: string, speciesName: string): Observation {
-  return { id, code: '1234', nickname: '테스터', speciesId, speciesName, description: null, createdAt: '2026-08-24' }
+  return { id, code: '1234', nickname: '테스터', speciesId, speciesName, description: null, note: null, tags: [], createdAt: '2026-08-24' }
 }
 
 describe('buildQuizQuestions', () => {
@@ -60,5 +61,16 @@ describe('buildQuizQuestions', () => {
       expect(new Set(q.choices).size).toBe(q.choices.length)
       expect(q.choices).toHaveLength(4)
     })
+  })
+})
+
+describe('buildClassGuessChoices', () => {
+  it('returns 4 unique class names including the correct one', () => {
+    const correctClass = Object.keys(CLASS_DESCRIPTIONS)[0]
+    const { choices, correctIndex } = buildClassGuessChoices(correctClass)
+
+    expect(choices).toHaveLength(4)
+    expect(new Set(choices).size).toBe(4)
+    expect(choices[correctIndex]).toBe(correctClass)
   })
 })

@@ -1,5 +1,6 @@
 import { Observation } from './types'
 import { SPECIES, findSpeciesById } from '@/data/species'
+import { CLASS_DESCRIPTIONS } from '@/data/classDescriptions'
 
 export interface QuizQuestion {
   observation: Observation
@@ -7,7 +8,7 @@ export interface QuizQuestion {
   correctIndex: number
 }
 
-function shuffle<T>(arr: T[]): T[] {
+export function shuffle<T>(arr: T[]): T[] {
   return [...arr].sort(() => Math.random() - 0.5)
 }
 
@@ -41,4 +42,12 @@ export function buildQuizQuestions(observations: Observation[]): QuizQuestion[] 
 
     return { observation, choices, correctIndex }
   })
+}
+
+/** "이 친구는 어느 무리(강)일까요?" 먼저 추측하기용 4지선다 강 이름 목록(정답 포함, 섞은 상태)을 만든다. */
+export function buildClassGuessChoices(correctClass: string): { choices: string[]; correctIndex: number } {
+  const others = Object.keys(CLASS_DESCRIPTIONS).filter((c) => c !== correctClass)
+  const distractors = shuffle(others).slice(0, 3)
+  const choices = shuffle([...distractors, correctClass])
+  return { choices, correctIndex: choices.indexOf(correctClass) }
 }

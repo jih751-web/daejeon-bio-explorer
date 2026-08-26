@@ -1,14 +1,16 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
 import { SPECIES } from '@/data/species'
 
-export default function QrCodesPage() {
-  const [origin, setOrigin] = useState('')
+const noopSubscribe = () => () => {}
 
-  useEffect(() => {
-    setOrigin(window.location.origin)
-  }, [])
+export default function QrCodesPage() {
+  const origin = useSyncExternalStore(
+    noopSubscribe,
+    () => window.location.origin,
+    () => ''
+  )
 
   return (
     <main className="p-8 max-w-4xl mx-auto">

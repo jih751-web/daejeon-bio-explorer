@@ -3,7 +3,7 @@ import { getFirestoreAdmin } from '@/lib/firebase-admin'
 import { FieldValue } from 'firebase-admin/firestore'
 
 export async function POST(req: NextRequest) {
-  const { code, nickname, speciesId, speciesName, description } = await req.json()
+  const { code, nickname, speciesId, speciesName, description, note, tags } = await req.json()
   const db = getFirestoreAdmin()
 
   const ref = await db.collection('observations').add({
@@ -12,6 +12,8 @@ export async function POST(req: NextRequest) {
     speciesId,
     speciesName,
     description: description ?? null,
+    note: note ?? null,
+    tags: Array.isArray(tags) ? tags : [],
     createdAt: FieldValue.serverTimestamp(),
   })
 
@@ -37,6 +39,8 @@ export async function GET(req: NextRequest) {
       speciesId: data.speciesId,
       speciesName: data.speciesName,
       description: data.description,
+      note: data.note ?? null,
+      tags: Array.isArray(data.tags) ? data.tags : [],
       createdAt: data.createdAt?.toDate?.().toISOString() ?? null,
     }
   })
