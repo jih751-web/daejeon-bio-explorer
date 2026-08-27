@@ -49,7 +49,7 @@ function QuizContent() {
     if (isCorrect) setCorrectCount((c) => c + 1)
 
     try {
-      await queueOrSend('/api/quiz', { code, nickname, observationId: q.observation.id, isCorrect })
+      await queueOrSend('/api/quiz', { code, nickname, observationId: q.observation.id, questionType: q.type, isCorrect })
     } catch {
       // Silently ignore answer submission failures to avoid blocking the quiz.
       // The student's score record for this question will be lost, but they can continue.

@@ -15,6 +15,7 @@ export interface QuizResult {
   code: string
   nickname: string
   observationId: string
+  questionType: 'species' | 'class'
   isCorrect: boolean
   answeredAt: string | null
 }

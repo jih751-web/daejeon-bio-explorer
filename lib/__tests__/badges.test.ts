@@ -60,6 +60,7 @@ describe('computeBadges', () => {
       code: '1234',
       nickname: '탐험가1',
       observationId: obs.id,
+      questionType: 'species',
       isCorrect: i < 9,
       answeredAt: new Date(Date.now() + i * 1000).toISOString(),
     }))
@@ -75,6 +76,7 @@ describe('computeBadges', () => {
       code: '1234',
       nickname: '탐험가1',
       observationId: obs.id,
+      questionType: 'species',
       isCorrect: true,
       answeredAt: new Date(Date.now() + i * 1000).toISOString(),
     }))
@@ -85,8 +87,8 @@ describe('computeBadges', () => {
   it('awards 오답 복구 when a wrong answer for a species is later followed by a correct one', () => {
     const obs = makeObservation({ id: 'o1' })
     const quizResults: QuizResult[] = [
-      { id: 'q1', code: '1234', nickname: '탐험가1', observationId: 'o1', isCorrect: false, answeredAt: '2026-01-01T00:00:00.000Z' },
-      { id: 'q2', code: '1234', nickname: '탐험가1', observationId: 'o1', isCorrect: true, answeredAt: '2026-01-01T00:05:00.000Z' },
+      { id: 'q1', code: '1234', nickname: '탐험가1', observationId: 'o1', questionType: 'species', isCorrect: false, answeredAt: '2026-01-01T00:00:00.000Z' },
+      { id: 'q2', code: '1234', nickname: '탐험가1', observationId: 'o1', questionType: 'species', isCorrect: true, answeredAt: '2026-01-01T00:05:00.000Z' },
     ]
     const badges = computeBadges({ observations: [obs], quizResults })
     expect(badges.some((b) => b.id === 'wrong-answer-recovery')).toBe(true)

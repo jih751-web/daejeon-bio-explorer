@@ -1,8 +1,10 @@
 'use client'
 import { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'next/navigation'
+import Link from 'next/link'
 import { Announcement, Observation, QuizResult } from '@/lib/types'
 import { computeBadges } from '@/lib/badges'
+import { findSpeciesById } from '@/data/species'
 
 const STALL_MINUTES = 10
 
@@ -102,6 +104,57 @@ export default function DashboardPage() {
 
   const distinctSpeciesCount = useMemo(() => new Set(allObservations.map((o) => o.speciesId)).size, [allObservations])
 
+  const observationById = useMemo(() => new Map(allObservations.map((o) => [o.id, o])), [allObservations])
+
+  const mostMissedSpecies = useMemo(() => {
+    const counts = new Map<string, number>()
+    for (const r of allQuizResults) {
+      if (r.isCorrect || r.questionType !== 'species') continue
+      const speciesName = observationById.get(r.observationId)?.speciesName
+      if (!speciesName) continue
+      counts.set(speciesName, (counts.get(speciesName) ?? 0) + 1)
+    }
+    return [...counts.entries()].map(([speciesName, count]) => ({ speciesName, count })).sort((a, b) => b.count - a.count).slice(0, 10)
+  }, [allQuizResults, observationById])
+
+  const mostMissedClasses = useMemo(() => {
+    const counts = new Map<string, number>()
+    for (const r of allQuizResults) {
+      if (r.isCorrect || r.questionType !== 'class') continue
+      const speciesId = observationById.get(r.observationId)?.speciesId
+      const className = speciesId ? findSpeciesById(speciesId)?.taxonomy.class : undefined
+      if (!className) continue
+      counts.set(className, (counts.get(className) ?? 0) + 1)
+    }
+    return [...counts.entries()].map(([className, count]) => ({ className, count })).sort((a, b) => b.count - a.count).slice(0, 10)
+  }, [allQuizResults, observationById])
+
+  const tagPopularity = useMemo(() => {
+    const counts = new Map<string, number>()
+    for (const o of allObservations) {
+      for (const tag of o.tags) counts.set(tag, (counts.get(tag) ?? 0) + 1)
+    }
+    return [...counts.entries()].map(([tag, count]) => ({ tag, count })).sort((a, b) => b.count - a.count)
+  }, [allObservations])
+
+  const activityTimeline = useMemo(() => {
+    const BUCKET_MS = 10 * 60 * 1000
+    const counts = new Map<number, number>()
+    for (const o of allObservations) {
+      if (!o.createdAt) continue
+      const bucket = Math.floor(new Date(o.createdAt).getTime() / BUCKET_MS) * BUCKET_MS
+      counts.set(bucket, (counts.get(bucket) ?? 0) + 1)
+    }
+    return [...counts.entries()]
+      .sort((a, b) => a[0] - b[0])
+      .map(([bucket, count]) => ({
+        label: new Date(bucket).toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' }),
+        count,
+      }))
+  }, [allObservations])
+
+  const timelineMax = Math.max(1, ...activityTimeline.map((t) => t.count))
+
   if (error) return <main className="p-8 text-center text-red-600">{error}</main>
   if (!data) return <main className="p-8 text-center">불러오는 중...</main>
 
@@ -169,7 +222,12 @@ export default function DashboardPage() {
               >
                 <span className="flex items-center gap-2">
                   {isStalled && <span className="w-2 h-2 rounded-full bg-neutral-400 shrink-0" />}
-                  {s.nickname}
+                  <Link
+                    href={`/teacher/dashboard/${code}/student/${encodeURIComponent(s.nickname)}`}
+                    className="underline underline-offset-2 hover:text-[color:var(--color-forest-deep)]"
+                  >
+                    {s.nickname}
+                  </Link>
                   {isStalled && <span className="text-xs">({idleMinutes}분째 멈춤)</span>}
                 </span>
                 <span className="flex gap-3">
@@ -184,8 +242,83 @@ export default function DashboardPage() {
         </ul>
       </section>
 
+      {activityTimeline.length > 0 && (
+        <section className="mb-8">
+          <h2 className="font-bold mb-2">시간대별 참여 추이 (10분 단위)</h2>
+          <div className="flex items-end gap-1.5 h-24 bg-white rounded-xl p-3 border">
+            {activityTimeline.map((t) => (
+              <div key={t.label} className="flex-1 flex flex-col items-center justify-end gap-1 h-full">
+                <div
+                  className="w-full rounded-t-sm bg-[color:var(--color-forest-deep)]"
+                  style={{ height: `${Math.max(6, (t.count / timelineMax) * 100)}%` }}
+                  title={`${t.label} · ${t.count}건`}
+                />
+                <span className="text-[9px] text-neutral-500 whitespace-nowrap">{t.label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section className="mb-8">
+        <h2 className="font-bold mb-2">많이 틀린 동물 TOP 10</h2>
+        {mostMissedSpecies.length === 0 ? (
+          <p className="text-sm text-neutral-500">아직 퀴즈 오답 기록이 없어요.</p>
+        ) : (
+          <ul className="space-y-1">
+            {mostMissedSpecies.map((s) => (
+              <li key={s.speciesName} className="flex justify-between border-b py-1">
+                <span>{s.speciesName}</span>
+                <span className="text-[color:var(--color-coral)] font-semibold">{s.count}번 틀림</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <section className="mb-8">
+        <h2 className="font-bold mb-2">많이 틀린 강(class) TOP 10</h2>
+        {mostMissedClasses.length === 0 ? (
+          <p className="text-sm text-neutral-500">아직 &ldquo;어느 무리?&rdquo; 문제 오답 기록이 없어요.</p>
+        ) : (
+          <ul className="space-y-1">
+            {mostMissedClasses.map((c) => (
+              <li key={c.className} className="flex justify-between border-b py-1">
+                <span>{c.className}</span>
+                <span className="text-[color:var(--color-coral)] font-semibold">{c.count}번 틀림</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <section className="mb-8">
+        <h2 className="font-bold mb-2">관찰 태그 인기 순위</h2>
+        {tagPopularity.length === 0 ? (
+          <p className="text-sm text-neutral-500">아직 선택된 관찰 태그가 없어요.</p>
+        ) : (
+          <div className="flex flex-col gap-2">
+            {tagPopularity.map((t) => {
+              const max = tagPopularity[0].count
+              return (
+                <div key={t.tag} className="flex items-center gap-3">
+                  <span className="w-20 text-sm shrink-0">{t.tag}</span>
+                  <div className="flex-1 h-2.5 rounded-full bg-sky-soft overflow-hidden">
+                    <div
+                      className="h-full rounded-full bg-[color:var(--color-sky)]"
+                      style={{ width: `${(t.count / max) * 100}%` }}
+                    />
+                  </div>
+                  <span className="text-xs text-neutral-500 w-10 text-right shrink-0">{t.count}회</span>
+                </div>
+              )
+            })}
+          </div>
+        )}
+      </section>
+
       <section>
-        <h2 className="font-bold mb-2">많이 발견된 생물 순위</h2>
+        <h2 className="font-bold mb-2">많이 찾은 동물 순위</h2>
         <ul className="space-y-1">
           {data.speciesRanking.map((s) => (
             <li key={s.speciesName} className="flex justify-between border-b py-1">

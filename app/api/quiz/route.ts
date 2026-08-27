@@ -3,13 +3,14 @@ import { getFirestoreAdmin } from '@/lib/firebase-admin'
 import { FieldValue } from 'firebase-admin/firestore'
 
 export async function POST(req: NextRequest) {
-  const { code, nickname, observationId, isCorrect } = await req.json()
+  const { code, nickname, observationId, questionType, isCorrect } = await req.json()
   const db = getFirestoreAdmin()
 
   await db.collection('quizResults').add({
     code,
     nickname,
     observationId,
+    questionType: questionType === 'class' ? 'class' : 'species',
     isCorrect,
     answeredAt: FieldValue.serverTimestamp(),
   })
@@ -34,6 +35,7 @@ export async function GET(req: NextRequest) {
       code: data.code,
       nickname: data.nickname,
       observationId: data.observationId,
+      questionType: data.questionType === 'class' ? 'class' : 'species',
       isCorrect: data.isCorrect,
       answeredAt: data.answeredAt?.toDate?.().toISOString() ?? null,
     }
