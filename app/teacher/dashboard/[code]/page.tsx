@@ -2,9 +2,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
-import { Announcement, Observation, QuizResult } from '@/lib/types'
+import { Announcement, Observation, QuizResult, SurveyPhase, SurveyResponse } from '@/lib/types'
 import { computeBadges } from '@/lib/badges'
 import { findSpeciesById } from '@/data/species'
+import { summarizeResponses } from '@/lib/survey'
 
 const STALL_MINUTES = 10
 
@@ -23,6 +24,8 @@ export default function DashboardPage() {
   const [announcement, setAnnouncement] = useState<Announcement | null>(null)
   const [announcementInput, setAnnouncementInput] = useState('')
   const [now, setNow] = useState(() => Date.now())
+  const [surveyPhase, setSurveyPhase] = useState<SurveyPhase | null>(null)
+  const [surveyResponses, setSurveyResponses] = useState<SurveyResponse[]>([])
 
   useEffect(() => {
     const load = () => {
@@ -44,6 +47,14 @@ export default function DashboardPage() {
       fetch(`/api/announcement?code=${code}`)
         .then((r) => r.json())
         .then(setAnnouncement)
+        .catch(() => {})
+      fetch(`/api/survey-phase?code=${code}`)
+        .then((r) => r.json())
+        .then((data) => setSurveyPhase(data.phase ?? null))
+        .catch(() => {})
+      fetch(`/api/survey?code=${code}`)
+        .then((r) => r.json())
+        .then((data) => setSurveyResponses(data.responses ?? []))
         .catch(() => {})
     }
     load()
@@ -67,6 +78,11 @@ export default function DashboardPage() {
   async function clearAnnouncement() {
     await fetch('/api/announcement', { method: 'POST', body: JSON.stringify({ code, text: null }) })
     setAnnouncement({ text: null, updatedAt: new Date().toISOString() })
+  }
+
+  async function setPhase(phase: SurveyPhase | null) {
+    await fetch('/api/survey-phase', { method: 'POST', body: JSON.stringify({ code, phase }) })
+    setSurveyPhase(phase)
   }
 
   const lastActivityByNickname = useMemo(() => {
@@ -155,6 +171,15 @@ export default function DashboardPage() {
 
   const timelineMax = Math.max(1, ...activityTimeline.map((t) => t.count))
 
+  const preSummary = useMemo(
+    () => summarizeResponses(surveyResponses.filter((r) => r.phase === 'pre')),
+    [surveyResponses]
+  )
+  const postSummary = useMemo(
+    () => summarizeResponses(surveyResponses.filter((r) => r.phase === 'post')),
+    [surveyResponses]
+  )
+
   if (error) return <main className="p-8 text-center text-red-600">{error}</main>
   if (!data) return <main className="p-8 text-center">불러오는 중...</main>
 
@@ -187,6 +212,43 @@ export default function DashboardPage() {
           >
             보내기
           </button>
+        </div>
+      </section>
+
+      <section className="mb-8 bg-sky-soft rounded-2xl p-4">
+        <h2 className="font-bold mb-2">사전·사후 검사</h2>
+        <div className="flex gap-2 mb-3">
+          <button
+            onClick={() => setPhase(surveyPhase === 'pre' ? null : 'pre')}
+            className="flex-1 py-2 rounded-lg text-sm font-bold"
+            style={surveyPhase === 'pre' ? { background: 'var(--color-sky)', color: 'white' } : { background: 'white', color: 'var(--color-sky)' }}
+          >
+            {surveyPhase === 'pre' ? '사전 검사 진행 중 (끄기)' : '사전 검사 열기'}
+          </button>
+          <button
+            onClick={() => setPhase(surveyPhase === 'post' ? null : 'post')}
+            className="flex-1 py-2 rounded-lg text-sm font-bold"
+            style={surveyPhase === 'post' ? { background: 'var(--color-sky)', color: 'white' } : { background: 'white', color: 'var(--color-sky)' }}
+          >
+            {surveyPhase === 'post' ? '사후 검사 진행 중 (끄기)' : '사후 검사 열기'}
+          </button>
+        </div>
+        <p className="text-xs text-neutral-500 mb-3">켜두면 아직 응답 안 한 학생이 활동 코드로 접속할 때 자동으로 검사부터 진행돼요.</p>
+        <div className="grid grid-cols-2 gap-3">
+          <div className="bg-white rounded-xl p-3">
+            <p className="text-xs text-neutral-500 mb-1">사전 검사 ({preSummary.count}명)</p>
+            <p className="text-lg font-bold">지식 {preSummary.avgKnowledge ?? '-'} / 10</p>
+            <p className="text-xs text-neutral-500 mt-1">
+              태도(분류) {preSummary.avgAttitude.생물분류 ?? '-'} · 태도(AI) {preSummary.avgAttitude.AI ?? '-'}
+            </p>
+          </div>
+          <div className="bg-white rounded-xl p-3">
+            <p className="text-xs text-neutral-500 mb-1">사후 검사 ({postSummary.count}명)</p>
+            <p className="text-lg font-bold">지식 {postSummary.avgKnowledge ?? '-'} / 10</p>
+            <p className="text-xs text-neutral-500 mt-1">
+              태도(분류) {postSummary.avgAttitude.생물분류 ?? '-'} · 태도(AI) {postSummary.avgAttitude.AI ?? '-'}
+            </p>
+          </div>
         </div>
       </section>
 

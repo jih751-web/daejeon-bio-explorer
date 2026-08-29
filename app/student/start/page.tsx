@@ -27,8 +27,24 @@ function StudentStartContent() {
         setError('존재하지 않는 활동 코드예요. 선생님께 다시 확인해주세요')
         return
       }
+
+      const destination = next || '/student/scan'
+      const phaseRes = await fetch(`/api/survey-phase?code=${code}`)
+      const phaseData = await phaseRes.json()
+      if (phaseData.phase === 'pre' || phaseData.phase === 'post') {
+        const doneRes = await fetch(
+          `/api/survey?code=${code}&nickname=${encodeURIComponent(nickname)}&phase=${phaseData.phase}`
+        )
+        const doneData = await doneRes.json()
+        if ((doneData.responses ?? []).length === 0) {
+          const params = new URLSearchParams({ code, nickname, phase: phaseData.phase, next: destination })
+          router.push(`/student/survey?${params.toString()}`)
+          return
+        }
+      }
+
       const params = new URLSearchParams({ code, nickname })
-      router.push(`${next || '/student/scan'}?${params.toString()}`)
+      router.push(`${destination}?${params.toString()}`)
     } catch {
       setError('문제가 발생했어요. 다시 시도해주세요')
     }

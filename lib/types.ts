@@ -26,3 +26,15 @@ export interface Announcement {
   text: string | null
   updatedAt: string | null
 }
+
+export type SurveyPhase = 'pre' | 'post'
+
+export interface SurveyResponse {
+  id: string
+  code: string
+  nickname: string
+  phase: SurveyPhase
+  /** 문항 id → 답 (classId/trueFalse는 boolean 또는 string, attitude는 1~5 숫자) */
+  answers: Record<string, string | boolean | number>
+  submittedAt: string | null
+}
